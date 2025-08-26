@@ -8,7 +8,7 @@ public class DragZone : MonoBehaviour
     {
         Drag item = other.GetComponent<Drag>();
 
-        if (item != null && !item.isDragging && item.isDragged == false)
+        if (item != null && !item.isDragging && !item.isDragged)
         {
             Debug.Log("Âû½Ï! µå·Ó ¼º°ø!");
 
