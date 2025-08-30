@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animation
+  m_Name: ToriHappy
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: b2459956b1ceb9d4b9c6e51e8d7767f7, type: 3}
+      value: {fileID: 21300000, guid: e19391ce00cda234baea83445136fa89, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 7b7c7b7bc1413a54d8d661afbd6f6ffd, type: 3}
+      value: {fileID: 21300000, guid: 593d3e41fd81c304889d54df6dfa1f2f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: b2459956b1ceb9d4b9c6e51e8d7767f7, type: 3}
-    - {fileID: 21300000, guid: 7b7c7b7bc1413a54d8d661afbd6f6ffd, type: 3}
+    - {fileID: 21300000, guid: e19391ce00cda234baea83445136fa89, type: 3}
+    - {fileID: 21300000, guid: 593d3e41fd81c304889d54df6dfa1f2f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
