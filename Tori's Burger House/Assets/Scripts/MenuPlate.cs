@@ -9,7 +9,7 @@ public class MenuPlate : MonoBehaviour
     public IngredientData ingredientData;
 
     private List<Menu> menuList = new List<Menu>();
-    private List<int> usedIndices = new List<int>();
+    private HashSet<string> usedCombinations = new HashSet<string>(); // 조합 저장
 
     void Start()
     {
@@ -19,9 +19,17 @@ public class MenuPlate : MonoBehaviour
             Menu menu = menuObj.GetComponent<Menu>();
             if (menu != null)
             {
-                menu.InitializeMenu(ingredientData, usedIndices);
+                menu.InitializeMenu(ingredientData, usedCombinations);
                 menuList.Add(menu);
             }
+        }
+
+        // 생성된 메뉴 로그 출력
+        int count = 1;
+        foreach (var menu in menuList)
+        {
+            Debug.Log($"메뉴 {count}: {string.Join(", ", menu.SelectedIngredientNames)}");
+            count++;
         }
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,14 +5,16 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
     [Header("Ingredient UI")]
-    public Transform ingredientContainer;    // GridLayoutGroup 있는 오브젝트
-    public GameObject ingredientSlotPrefab;  // UI 슬롯 (Image만 있으면 됨)
+    public Transform ingredientContainer;
+    public GameObject ingredientSlotPrefab;
 
-    private List<GameObject> selectedIngredients = new List<GameObject>();
+    private List<int> selectedIngredientIndices = new List<int>();
+    public List<string> SelectedIngredientNames { get; private set; } = new List<string>();
 
-    public void InitializeMenu(IngredientData ingredientData, List<int> usedIndices)
+    public void InitializeMenu(IngredientData ingredientData, HashSet<string> usedCombinations)
     {
-        selectedIngredients.Clear();
+        selectedIngredientIndices.Clear();
+        SelectedIngredientNames.Clear();
 
         GridLayoutGroup grid = ingredientContainer.GetComponent<GridLayoutGroup>();
         if (grid == null)
@@ -23,34 +24,31 @@ public class Menu : MonoBehaviour
         }
 
         int ingredientCount = 3;
-        List<int> availableIndices = new List<int>();
 
-        for (int i = 0; i < ingredientData.ingredientPrefabs.Count; i++)
+        // 조합 찾기
+        string comboKey;
+        do
         {
-            if (!usedIndices.Contains(i))
-                availableIndices.Add(i);
+            selectedIngredientIndices.Clear();
+
+            for (int i = 0; i < ingredientCount; i++)
+            {
+                int ingredientIndex = Random.Range(0, ingredientData.ingredientPrefabs.Count);
+                selectedIngredientIndices.Add(ingredientIndex);
+            }
+
+            comboKey = string.Join(",", selectedIngredientIndices);
         }
+        while (usedCombinations.Contains(comboKey)); // 이미 있으면 다시 뽑기
 
-        if (availableIndices.Count < ingredientCount)
+        usedCombinations.Add(comboKey);
+
+        // UI 표시
+        foreach (int ingredientIndex in selectedIngredientIndices)
         {
-            Debug.LogError("재료가 부족합니다! IngredientData에 프리팹을 더 넣으세요.");
-            return;
-        }
-
-        for (int i = 0; i < ingredientCount; i++)
-        {
-            int randIndex = Random.Range(0, availableIndices.Count);
-            int ingredientIndex = availableIndices[randIndex];
-            availableIndices.RemoveAt(randIndex);
-            usedIndices.Add(ingredientIndex);
-
-            // prefab 대신 UI 오브젝트 (Image)로 가정
             GameObject prefab = ingredientData.ingredientPrefabs[ingredientIndex];
 
-            // UI 슬롯 생성
             GameObject ingredientUI = Instantiate(ingredientSlotPrefab, ingredientContainer);
-
-            // UI에 Sprite 할당 (Image에서 바로 가져옴)
             Image img = ingredientUI.GetComponent<Image>();
             if (img != null)
             {
@@ -59,7 +57,7 @@ public class Menu : MonoBehaviour
                     img.sprite = prefabImage.sprite;
             }
 
-            selectedIngredients.Add(prefab);
+            SelectedIngredientNames.Add(prefab.name);
         }
     }
 }
