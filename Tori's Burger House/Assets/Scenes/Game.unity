@@ -1814,6 +1814,7 @@ MonoBehaviour:
   menuContainer: {fileID: 506157981}
   menuCount: 4
   ingredientData: {fileID: 11400000, guid: faf89cf69883c1a448fdc3f2c7130334, type: 2}
+  menuColors: []
 --- !u!114 &506157983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5766,6 +5767,10 @@ PrefabInstance:
     - target: {fileID: 8448445024159754157, guid: ae183be66767c5b46856b04c8739faec, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448445024159754157, guid: ae183be66767c5b46856b04c8739faec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
