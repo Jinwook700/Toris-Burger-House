@@ -63,6 +63,7 @@ public class Tori : MonoBehaviour
         if (animator != null)
         {
             animator.SetFloat("state", (int)newState);
+            TextManager.Instance.SetText(newState.ToString() + "이다냥" + "\n" + "냐냐냥~!");
             Debug.Log("현재 상태: " + newState.ToString());
         }
     }
