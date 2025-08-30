@@ -3134,7 +3134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c511b318557bd46873ef5295bdca9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientPrefab: {fileID: 378900081648149135, guid: a282f5ed9bd45794f804974dcbd27dad, type: 3}
+  ingredientPrefab: {fileID: 378900081648149135, guid: 944220d9f33ac0f4994dde9d2f946e11, type: 3}
   currentIngredient: {fileID: 0}
 --- !u!58 &1193235291
 CircleCollider2D:
@@ -4327,7 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c511b318557bd46873ef5295bdca9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientPrefab: {fileID: 378900081648149135, guid: 9a617aef5ccf2ef4ebe5f3dfb21c279c, type: 3}
+  ingredientPrefab: {fileID: 378900081648149135, guid: a282f5ed9bd45794f804974dcbd27dad, type: 3}
   currentIngredient: {fileID: 0}
 --- !u!58 &1636823904
 CircleCollider2D:
