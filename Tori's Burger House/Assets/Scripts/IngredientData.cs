@@ -7,17 +7,18 @@ public class IngredientData : ScriptableObject
 {
     public enum IngredientType
     {
-        Bun = 0,
-        Tomato = 1,
-        Lettuce = 2,
-        Onion = 3,
-        Pickle = 4,
-        Meat = 5,
-        Cheese = 6,
-        FriedPotato = 7,
-        Cola = 8,
-        Cider = 9,
-        OrangeJuice = 10,
+        BunCircle = 0,
+        CheeseCircle = 1,
+        Cider = 2,
+        Cola = 3,
+        Cup = 4,
+        LettuceCircle = 5,
+        MeatCircle = 6,
+        OnionCircle = 7,
+        OrangeJuice = 8,
+        PickleCircle = 9,
+        PotatoCircle = 10,
+        TomatoCircle = 11,
     }
 
     [Header("Ingredients")]

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64320206acc848e4ea834cf38435d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IngredientType: 9
   offset: {x: 0, y: 0}
   isDragging: 0
   isDragged: 0

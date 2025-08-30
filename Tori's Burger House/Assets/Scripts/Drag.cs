@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static IngredientData;
 
 public class Drag : MonoBehaviour
 {
+    public IngredientType IngredientType;
+
     public Vector2 offset;
     public bool isDragging;
     public bool isDragged;
