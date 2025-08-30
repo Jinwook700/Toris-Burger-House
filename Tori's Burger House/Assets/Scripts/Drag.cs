@@ -11,6 +11,13 @@ public class Drag : MonoBehaviour
     public bool isDragging;
     public bool isDragged;
 
+    private void Update()
+    {
+        if (!isDragging &&  !isDragged)
+        {
+            StartCoroutine(DestoryThis());
+        }
+    }
     private void OnMouseDown()
     {
         isDragging = true;
@@ -29,5 +36,14 @@ public class Drag : MonoBehaviour
     void OnMouseUp()
     {
         isDragging = false;
+    }
+
+    IEnumerator DestoryThis()
+    {
+        yield return new WaitForSeconds(0.05f);
+        if (!isDragged)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using static IngredientData;
 
-// DragZone을 상속받아 기존 기능을 확장합니다.
 public class IndividualDragZone : DragZone
 {
     [SerializeField]
@@ -19,8 +18,6 @@ public class IndividualDragZone : DragZone
             {
                 if (item.IngredientType == acceptedType)
                 {
-                    Debug.Log("찰싹! 드롭 성공!");
-
                     item.transform.position = transform.position;
                     item.isDragged = true;
                 }

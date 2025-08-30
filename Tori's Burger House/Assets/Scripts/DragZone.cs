@@ -10,8 +10,6 @@ public class DragZone : MonoBehaviour
 
         if (item != null && !item.isDragging && !item.isDragged)
         {
-            Debug.Log("Âû½Ï! µå·Ó ¼º°ø!");
-
             item.transform.position = transform.position;
             item.isDragged = true;
         }
