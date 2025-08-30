@@ -102,6 +102,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0}
   isDragging: 0
   isDragged: 0
+  canDrag: 1
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0
