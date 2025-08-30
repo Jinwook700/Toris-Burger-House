@@ -9,7 +9,18 @@ public class MenuPlate : MonoBehaviour
     public IngredientData ingredientData;
 
     private List<Menu> menuList = new List<Menu>();
-    private HashSet<string> usedCombinations = new HashSet<string>(); // 조합 저장
+
+    // 메뉴 조합 관리용
+    public List<List<int>> allMenuCombinations = new List<List<int>>();
+    public List<Color> menuColors = new List<Color>();
+
+    // 사용할 색상 후보
+    private Color[] availableColors = new Color[]
+    {
+        Color.red,              // 빨강
+        new Color(0.5f, 1f, 0.5f), // 연두색
+        new Color(1f, 0.65f, 0f)   // 주황색
+    };
 
     void Start()
     {
@@ -19,17 +30,19 @@ public class MenuPlate : MonoBehaviour
             Menu menu = menuObj.GetComponent<Menu>();
             if (menu != null)
             {
-                menu.InitializeMenu(ingredientData, usedCombinations);
-                menuList.Add(menu);
-            }
-        }
+                // 랜덤 색상 선택
+                Color randomColor = availableColors[Random.Range(0, availableColors.Length)];
 
-        // 생성된 메뉴 로그 출력
-        int count = 1;
-        foreach (var menu in menuList)
-        {
-            Debug.Log($"메뉴 {count}: {string.Join(", ", menu.SelectedIngredientNames)}");
-            count++;
+                // 메뉴 초기화
+                menu.InitializeMenu(ingredientData, allMenuCombinations, randomColor);
+
+                // 리스트에 저장
+                menuList.Add(menu);
+                menuColors.Add(randomColor);
+                allMenuCombinations.Add(menu.SelectedIngredientIndices);
+
+                Debug.Log($"메뉴 {i + 1}: {string.Join(",", menu.SelectedIngredientIndices)} / 색상: {randomColor}");
+            }
         }
     }
 }
