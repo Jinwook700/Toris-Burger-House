@@ -6024,6 +6024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 266810081}
+  time: 0
+  setTime: 10
 --- !u!1 &1911439788
 GameObject:
   m_ObjectHideFlags: 0
@@ -7060,6 +7062,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 395648313}
+  - {fileID: 398727438}
   - {fileID: 383655262}
   - {fileID: 197595495}
   - {fileID: 601997602}
@@ -7071,5 +7074,4 @@ SceneRoots:
   - {fileID: 609189661}
   - {fileID: 813440177}
   - {fileID: 476930207}
-  - {fileID: 398727438}
   - {fileID: 1371438220}

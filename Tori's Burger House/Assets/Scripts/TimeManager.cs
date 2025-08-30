@@ -11,6 +11,7 @@ public class TimeManager : MonoBehaviour
     private TextMeshProUGUI timeText;
 
     public float time = 0f;
+    public float setTime = 180f;
     private bool isTimerRunning = false;
 
     private void Awake()
@@ -28,7 +29,7 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
-        time = 180f;
+        time = setTime;
         isTimerRunning = true;
         UpdateUIText();
     }
