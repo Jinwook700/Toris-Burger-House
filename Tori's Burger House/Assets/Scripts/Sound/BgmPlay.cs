@@ -10,6 +10,5 @@ public class BgmPlay : MonoBehaviour
     {
         SoundObject _soundObject;
         _soundObject = Sound.Play(bgmName, true);
-        _soundObject.SetVolume(0.1f);
     }
 }

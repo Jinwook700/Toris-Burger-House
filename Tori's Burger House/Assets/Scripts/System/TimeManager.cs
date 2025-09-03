@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -48,6 +49,16 @@ public class TimeManager : MonoBehaviour
                 time = 0;
                 isTimerRunning = false;
                 UpdateUIText();
+
+                int currentGold = GoldManager.Instance.gold;
+                if (currentGold >= 20000)
+                {
+                    SceneManager.LoadScene("Finish");
+                }
+                else
+                {
+                    SceneManager.LoadScene("NotFinish");
+                }
             }
         }
     }
