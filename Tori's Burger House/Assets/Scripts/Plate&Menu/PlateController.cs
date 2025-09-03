@@ -35,10 +35,26 @@ public class PlateController : MonoBehaviour
         int score = CalculateScore(combination);
 
         if (score > 0)
-            Debug.Log($"최종 점수: {score}점");
+        {
+            Debug.Log("정답! 메뉴와 일치합니다");
+            Debug.Log($"획득 점수: {score}");
+
+            // 맞춘 메뉴 삭제
+            MenuManager.Instance.RemoveMenuCombination(combination);
+
+            // 새 메뉴 생성
+            FindObjectOfType<MenuPlate>().SpawnNewMenu();
+        }
         else
-            Debug.Log("0점! 메뉴와 일치하지 않습니다");
+        {
+            Debug.Log("실패! 메뉴와 다릅니다");
+
+            ClearPlate();
+
+            isSubmitted = false;
+        }
     }
+
 
     // 현재 Plate의 조합 추출
     private List<int> GetPlateCombination()
@@ -207,4 +223,12 @@ public class PlateController : MonoBehaviour
                ingredient == (int)IngredientData.IngredientType.MeatCircle1 ||
                ingredient == (int)IngredientData.IngredientType.MeatCircle2;
     }
+
+    public void ClearPlate()
+    {
+        burgerBowl.ClearIngredients();
+        potatoBowl.ClearIngredients();
+        juiceBowl.ClearIngredients();
+    }
+
 }

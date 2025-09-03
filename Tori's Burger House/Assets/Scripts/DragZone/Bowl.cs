@@ -24,6 +24,9 @@ public class Bowl : DragZone
                 {
                     // 위치 고정
                     item.transform.position = transform.position;
+
+                    item.transform.SetParent(transform);
+
                     item.isDragged = true;
                     item.canDrag = false;
 

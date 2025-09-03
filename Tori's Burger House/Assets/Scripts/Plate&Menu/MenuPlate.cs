@@ -44,4 +44,19 @@ public class MenuPlate : MonoBehaviour
             }
         }
     }
+
+    public void SpawnNewMenu()
+    {
+        // 기존 메뉴 삭제
+        foreach (Transform child in menuContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        menuList.Clear();
+        allMenuCombinations.Clear();
+
+        // 다시 메뉴 생성
+        Start();
+    }
 }

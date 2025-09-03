@@ -38,4 +38,27 @@ public class MenuManager : MonoBehaviour
     {
         return menuCombinations;
     }
+
+    public void RemoveMenuCombination(List<int> combination)
+    {
+        for (int i = 0; i < menuCombinations.Count; i++)
+        {
+            if (AreCombinationsEqual(menuCombinations[i], combination))
+            {
+                menuCombinations.RemoveAt(i);
+                Debug.Log($"¸Þ´º »èÁ¦µÊ: {string.Join(", ", combination)}");
+                return;
+            }
+        }
+    }
+    private bool AreCombinationsEqual(List<int> combo1, List<int> combo2)
+    {
+        if (combo1.Count != combo2.Count) return false;
+        for (int i = 0; i < combo1.Count; i++)
+        {
+            if (combo1[i] != combo2[i])
+                return false;
+        }
+        return true;
+    }
 }
