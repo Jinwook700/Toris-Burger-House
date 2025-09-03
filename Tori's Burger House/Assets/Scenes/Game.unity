@@ -1301,13 +1301,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 1891196237}
     m_Modifications:
     - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
+      propertyPath: changeDataList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
       propertyPath: thisIngredientTypes.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
+      propertyPath: changeDataList.Array.data[0].type
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
       propertyPath: thisIngredientTypes.Array.data[1]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
+      propertyPath: changeDataList.Array.data[0].changePrefab
+      value: 
+      objectReference: {fileID: 378900081648149135, guid: b7329551e9940f14596f92bd7ec13c27, type: 3}
     - target: {fileID: 920824608843309572, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
       propertyPath: m_Name
       value: CiderCupZone
@@ -4144,13 +4156,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 1891196237}
     m_Modifications:
     - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
+      propertyPath: changeDataList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
       propertyPath: thisIngredientTypes.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
+      propertyPath: changeDataList.Array.data[0].type
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
       propertyPath: thisIngredientTypes.Array.data[1]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 779116392460085815, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
+      propertyPath: changeDataList.Array.data[0].changePrefab
+      value: 
+      objectReference: {fileID: 378900081648149135, guid: d23df8941e23d3447bc8a35d30c5331c, type: 3}
     - target: {fileID: 920824608843309572, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
       propertyPath: m_Name
       value: ColaCupZone

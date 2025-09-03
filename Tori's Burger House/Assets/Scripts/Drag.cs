@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static IngredientData;
 
@@ -11,14 +10,25 @@ public class Drag : MonoBehaviour
     public bool isDragging;
     public bool isDragged;
     public bool canDrag;
+    public bool isChange = false;
+
+    [SerializeField] private GameObject changePrefab; // 바꿀 Prefab을 Inspector에서 할당
 
     private void Update()
     {
-        if (!isDragging &&  !isDragged)
+        if (!isDragging && !isDragged)
         {
             StartCoroutine(DestoryThis());
         }
+
+        // Zone에 장착된 상태이고, 교체 가능할 때
+        if (isDragged && isChange)
+        {
+            isChange = false; // 중복 실행 방지
+            StartCoroutine(ChangeAfterDelay(2f));
+        }
     }
+
     private void OnMouseDown()
     {
         if (canDrag)
@@ -38,10 +48,9 @@ public class Drag : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = (Vector2)mousePos + offset;
         }
-            
     }
 
-    void OnMouseUp()
+    private void OnMouseUp()
     {
         if (canDrag)
         {
@@ -56,5 +65,21 @@ public class Drag : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ChangeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (changePrefab != null)
+        {
+            Instantiate(changePrefab, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
+
+    public void SetChangePrefab(GameObject prefab)
+    {
+        this.changePrefab = prefab;
     }
 }
