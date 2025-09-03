@@ -1072,7 +1072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -472, y: -236}
+  m_AnchoredPosition: {x: -472, y: -190}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429975913
@@ -1122,8 +1122,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1542,8 +1542,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1920,7 +1920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278, y: -310}
+  m_AnchoredPosition: {x: 278, y: -260}
   m_SizeDelta: {x: 2000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434359346
@@ -1943,8 +1943,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A. \uBE75, \uACE0\uAE30, \uAC10\uC790\uD280\uAE40\uC740 \uC624\uB798 \uAD7D\uAC70\uB098
-    \uD280\uAE30\uBA74 \uD0C8 \uC218 \uC788\uC5B4\uC694.\nB. \uB0C9\uC7A5\uACE0\uB294
+  m_text: "A. \uC74C\uB8CC\uC218\uB97C \uB123\uC73C\uBA74 \uBA54\uB274\uAC00 \uC81C\uCD9C\uB3FC\uC694.\nB.
+    \uBE75, \uACE0\uAE30, \uAC10\uC790\uD280\uAE40\uC740 \uC624\uB798 \uAD7D\uAC70\uB098
+    \uD280\uAE30\uBA74 \uD0C8 \uC218 \uC788\uC5B4\uC694.\nC. \uB0C9\uC7A5\uACE0\uB294
     \uC5F4\uC5B4\uB450\uBA74 \uC804\uAE30\uC138\uAC00 \uB098\uAC00\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7e69155c39bcd94c91691fa19398e09, type: 2}
@@ -1972,8 +1973,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3054,8 +3055,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
