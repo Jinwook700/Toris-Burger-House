@@ -131,6 +131,7 @@ public class PlateController : MonoBehaviour
         if (!hasDrinkMenu)
         {
             Debug.Log("해당 음료가 포함된 메뉴 없음 → 0점");
+            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
@@ -139,6 +140,7 @@ public class PlateController : MonoBehaviour
         if (burger.Count < 5)
         {
             Debug.Log("햄버거가 5겹 미만 → 0점");
+            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
@@ -148,6 +150,7 @@ public class PlateController : MonoBehaviour
         if (!IsBun(bunStart) || !IsBun(bunEnd))
         {
             Debug.Log("햄버거의 시작/끝이 빵이 아님 → 0점");
+            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
@@ -165,15 +168,13 @@ public class PlateController : MonoBehaviour
         {
             if (menuCombo.Count < 5) continue;
 
-            // 메뉴의 버거 중간 재료
             List<int> menuBurger = new List<int>
-    {
-        menuCombo[0],
-        menuCombo[1],
-        menuCombo[2]
-    };
+        {
+            menuCombo[0],
+            menuCombo[1],
+            menuCombo[2]
+        };
 
-            // 중간 재료 비교 (고기/탄고기 구분 없음)
             bool middleMatch = true;
             for (int i = 0; i < 3; i++)
             {
@@ -185,10 +186,7 @@ public class PlateController : MonoBehaviour
                 }
             }
 
-            // 빵 확인 (시작과 끝이 둘 다 빵인지)
             bool bunMatch = IsBun(burger[0]) && IsBun(burger[burger.Count - 1]);
-
-            // 메뉴 음료 비교
             bool drinkMatch = (menuCombo[4] == drink);
 
             if (middleMatch && bunMatch && drinkMatch)
@@ -201,38 +199,94 @@ public class PlateController : MonoBehaviour
         if (!match)
         {
             Debug.Log("일치하는 메뉴 없음 → 0점");
+            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
-        // 6. 감점 규칙 적용
-        // 빵 → BunCircle2(13) 태운 빵
-        if (bunStart == (int)IngredientData.IngredientType.BunCircle2) score -= 100;
-        if (bunEnd == (int)IngredientData.IngredientType.BunCircle2) score -= 100;
+        // -------------------------
+        // 6. 감점 규칙 + Tori 상태
+        // -------------------------
+        int burntCount = 0;
+        bool potatoBurnt = false;
+        bool potatoMissing = false;
 
-        // 고기 → MeatCircle2(15) 탄 고기
+        // 빵 체크
+        if (bunStart == (int)IngredientData.IngredientType.BunCircle2) { score -= 100; burntCount++; }
+        if (bunEnd == (int)IngredientData.IngredientType.BunCircle2) { score -= 100; burntCount++; }
+
+        // 고기 체크
         foreach (int mid in middleIngredients)
         {
-            if (mid == (int)IngredientData.IngredientType.MeatCircle2) score -= 100;
+            if (mid == (int)IngredientData.IngredientType.MeatCircle2)
+            {
+                score -= 100;
+                burntCount++;
+            }
         }
 
-        // 감자 → PotatoCircle2 = 정상, PotatoCircle3 = 태움 (-200)
-        int potato = plateCombo[3];
-        if (potato != (int)IngredientData.IngredientType.PotatoCircle2)
+        // 감자 체크
+        if (plateCombo.Count > 4)
         {
+            int potato = plateCombo[3];
             if (potato == (int)IngredientData.IngredientType.PotatoCircle3)
             {
                 Debug.Log("태운 감자튀김 → -200점");
                 score -= 200;
+                potatoBurnt = true;
             }
-            else
+            else if (potato != (int)IngredientData.IngredientType.PotatoCircle2)
             {
                 Debug.Log("감자 없음 → -400점");
                 score -= 400;
+                potatoMissing = true;
             }
+        }
+        else
+        {
+            Debug.Log("감자 없음 → -400점");
+            score -= 400;
+            potatoMissing = true;
+        }
+
+        // -------------------------
+        // Tori 상태 결정
+        // -------------------------
+        if (score == 1000)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Happy, "맛있겠다냥~!");
+        }
+        else if (potatoMissing && burntCount == 0)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Angry, "감자를 무시하냥!");
+        }
+        else if (potatoBurnt && burntCount == 0)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Normal, "감자에서 탄맛난다냥..");
+        }
+        else if (!potatoBurnt && !potatoMissing && burntCount == 1)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Normal, "잘먹겠다냥!");
+        }
+        else if (!potatoBurnt && !potatoMissing && burntCount == 2)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Normal, "먹을만하다냥");
+        }
+        else if (!potatoBurnt && !potatoMissing && burntCount >= 3)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Angry, "넌 요리하지마라냥");
+        }
+        else if (potatoBurnt && burntCount >= 1)
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Normal, "넌 요리하지 말라냥..");
+        }
+        else
+        {
+            Tori.Instance.SetState(Tori.CharacterState.Normal, "고생햇다냥.");
         }
 
         return Mathf.Max(score, 0);
     }
+
 
     private bool IsBun(int ingredient)
     {
