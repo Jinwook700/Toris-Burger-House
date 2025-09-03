@@ -24,11 +24,6 @@ public class Tori : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -63,7 +58,11 @@ public class Tori : MonoBehaviour
         if (animator != null)
         {
             animator.SetFloat("state", (int)newState);
-            TextManager.Instance.SetText(newState.ToString() + "이다냥" + "\n" + "냐냐냥~!");
+            if (TextManager.Instance != null)
+            {
+                TextManager.Instance.SetText(newState.ToString() + "이다냥" + "\n" + "냐냐냥~!");
+            }
+            
             Debug.Log("현재 상태: " + newState.ToString());
         }
     }
