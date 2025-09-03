@@ -23,6 +23,9 @@ public class IngredientData : ScriptableObject
         BunCircle2 = 13,
         MeatCircle1 = 14,
         MeatCircle2 = 15,
+        PotatoCircle1 = 16,
+        PotatoCircle2 = 17,
+        PotatoCircle3 = 18,
     }
 
     [Header("Ingredients")]

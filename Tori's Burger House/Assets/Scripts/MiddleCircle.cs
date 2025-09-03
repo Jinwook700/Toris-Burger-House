@@ -5,9 +5,10 @@ using UnityEngine;
 public class MiddleCircle : Drag
 {
     [SerializeField] private GameObject autoChangePrefab;
+    public float ChangeTime = 5f;
     private void Start()
     {
-        StartCoroutine(AutoChangeRoutine(5f));
+        StartCoroutine(AutoChangeRoutine(ChangeTime));
     }
 
     private IEnumerator AutoChangeRoutine(float delay)

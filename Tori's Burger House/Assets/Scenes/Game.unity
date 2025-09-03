@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 0a000000
+  thisIngredientTypes: 0a000000100000001100000012000000
 --- !u!4 &48703821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1238751257389757596, guid: e7e5526be54a0ec448685b8ee04624be, type: 3}
@@ -377,6 +377,22 @@ PrefabInstance:
     - target: {fileID: 427275101723628079, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
       propertyPath: m_Name
       value: FriMachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[1]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[2]
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[3]
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7807514934980568379, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1086,6 +1102,22 @@ PrefabInstance:
     - target: {fileID: 427275101723628079, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
       propertyPath: m_Name
       value: FriMachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[1]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[2]
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[3]
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7807514934980568379, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2293,7 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 0a000000
+  thisIngredientTypes: 0a000000100000001100000012000000
 --- !u!114 &1021900705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2669,7 +2701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 0a000000
+  thisIngredientTypes: 0a000000100000001100000012000000
 --- !u!114 &1246350807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2953,7 +2985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 0a000000
+  thisIngredientTypes: 0a000000100000001100000012000000
 --- !u!114 &1425112239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4820,6 +4852,22 @@ PrefabInstance:
     - target: {fileID: 427275101723628079, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
       propertyPath: m_Name
       value: FriMachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[1]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[2]
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933879958786601030, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
+      propertyPath: thisIngredientTypes.Array.data[3]
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7807514934980568379, guid: 46b7d768ae57c9e47aca1ce26b0ba0ec, type: 3}
       propertyPath: m_LocalPosition.x

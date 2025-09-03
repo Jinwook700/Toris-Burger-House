@@ -13,6 +13,8 @@ public class Drag : MonoBehaviour
     public bool isChange = false;
     public bool firstDrag = false;
 
+    public float delayTime = 2f;
+
     [SerializeField] private GameObject changePrefab; // 바꿀 Prefab을 Inspector에서 할당
 
     private void Update()
@@ -26,7 +28,7 @@ public class Drag : MonoBehaviour
         if (isDragged && isChange)
         {
             isChange = false; // 중복 실행 방지
-            StartCoroutine(ChangeAfterDelay(2f));
+            StartCoroutine(ChangeAfterDelay(delayTime));
         }
     }
 
