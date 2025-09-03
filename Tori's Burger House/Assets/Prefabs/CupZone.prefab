@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2508773832254056926}
   - component: {fileID: 3677045673397125990}
   - component: {fileID: 4929347258579426557}
-  - component: {fileID: 779116392460085815}
+  - component: {fileID: 8970397432440648868}
   m_Layer: 0
   m_Name: CupZone
   m_TagString: Untagged
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &779116392460085815
+--- !u!114 &8970397432440648868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +168,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 920824608843309572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2264776311686b449f5e7fcbf2e08e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 237b64ea4faf5754b8d10e996a77a527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 04000000
+  drinkPrefab: {fileID: 0}
+  acceptedType: 4
