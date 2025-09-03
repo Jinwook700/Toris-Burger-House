@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GoldManager : MonoBehaviour
@@ -36,6 +37,13 @@ public class GoldManager : MonoBehaviour
     {
         gold += amount;
         UpdateGoldUI();
+
+        int currentGold = GoldManager.Instance.gold;
+        if (gold <= 0)
+        {
+            SceneManager.LoadScene("NotFinish");
+            GameManager.Instance.totalGold = currentGold;
+        }
     }
     private void UpdateGoldUI()
     {

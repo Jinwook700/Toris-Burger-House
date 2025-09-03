@@ -54,10 +54,12 @@ public class TimeManager : MonoBehaviour
                 if (currentGold >= 20000)
                 {
                     SceneManager.LoadScene("Finish");
+                    GameManager.Instance.totalGold = currentGold;
                 }
                 else
                 {
                     SceneManager.LoadScene("NotFinish");
+                    GameManager.Instance.totalGold = currentGold;
                 }
             }
         }
