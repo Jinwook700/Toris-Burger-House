@@ -8,6 +8,13 @@ public class MiddleCircle : Drag
     public float ChangeTime = 5f;
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (normalSprite != null)
+        {
+            spriteRenderer.sprite = normalSprite;
+        }
+
         StartCoroutine(AutoChangeRoutine(ChangeTime));
     }
 

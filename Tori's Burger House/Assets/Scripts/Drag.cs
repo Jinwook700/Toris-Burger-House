@@ -13,9 +13,25 @@ public class Drag : MonoBehaviour
     public bool isChange = false;
     public bool firstDrag = false;
 
+    protected SpriteRenderer spriteRenderer;
+    private bool spriteChanged = false;
+
     public float delayTime = 2f;
 
     [SerializeField] private GameObject changePrefab; // 바꿀 Prefab을 Inspector에서 할당
+
+    [SerializeField] protected Sprite normalSprite;   // 기본 스프라이트
+    [SerializeField] private Sprite changedSprite;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (normalSprite != null)
+        {
+            spriteRenderer.sprite = normalSprite;
+        }
+    }
 
     private void Update()
     {
@@ -46,6 +62,14 @@ public class Drag : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (!spriteChanged && changedSprite != null)
+        {
+            spriteRenderer.sprite = changedSprite;
+            spriteChanged = true;
+
+            transform.localScale = transform.localScale * 0.7f;
+        }
+
         if (canDrag)
         {
             if (!firstDrag)
