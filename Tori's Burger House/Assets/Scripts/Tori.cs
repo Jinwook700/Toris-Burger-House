@@ -31,36 +31,16 @@ public class Tori : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        SetState(CharacterState.Normal);
+        SetState(CharacterState.Normal, "햄버거를 만들어보자냥");
     }
-
-    private void Update()
-    {
-        // Q 키를 누르면 Normal 상태로 변경
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SetState(CharacterState.Normal);
-        }
-        // W 키를 누르면 Happy 상태로 변경
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            SetState(CharacterState.Happy);
-        }
-        // E 키를 누르면 Angry 상태로 변경
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            SetState(CharacterState.Angry);
-        }
-    }
-
-    public void SetState(CharacterState newState)
+    public void SetState(CharacterState newState, string textMessage)
     {
         if (animator != null)
         {
             animator.SetFloat("state", (int)newState);
             if (TextManager.Instance != null)
             {
-                TextManager.Instance.SetText(newState.ToString() + "이다냥" + "\n" + "냐냐냥~!");
+                TextManager.Instance.SetText(textMessage);
             }
             
             Debug.Log("현재 상태: " + newState.ToString());
