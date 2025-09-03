@@ -118,4 +118,15 @@ public class SoundManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
+    public void StopAllBgm()
+    {
+        foreach (SoundObject soundObject in soundObjects)
+        {
+            if (soundObject.GetSoundType() == SoundType.BGM && soundObject.IsPlaying)
+            {
+                soundObject.Stop();
+            }
+        }
+    }
 }
