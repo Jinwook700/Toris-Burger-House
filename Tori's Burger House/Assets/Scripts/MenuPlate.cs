@@ -30,18 +30,17 @@ public class MenuPlate : MonoBehaviour
             Menu menu = menuObj.GetComponent<Menu>();
             if (menu != null)
             {
-                // 랜덤 색상 선택
                 Color randomColor = availableColors[Random.Range(0, availableColors.Length)];
 
-                // 메뉴 초기화
-                menu.InitializeMenu(ingredientData, allMenuCombinations, randomColor);
+                // MenuManager에서 기존 조합을 가져와 InitializeMenu에 전달
+                List<List<int>> existingCombinations = MenuManager.Instance.GetAllMenuCombinations();
+                menu.InitializeMenu(ingredientData, existingCombinations, randomColor);
 
-                // 리스트에 저장
                 menuList.Add(menu);
                 menuColors.Add(randomColor);
-                allMenuCombinations.Add(menu.SelectedIngredientIndices);
 
-                Debug.Log($"메뉴 {i + 1}: {string.Join(",", menu.SelectedIngredientIndices)} / 색상: {randomColor}");
+                // 생성된 조합을 MenuManager에 추가
+                MenuManager.Instance.AddMenuCombination(menu.SelectedIngredientIndices);
             }
         }
     }

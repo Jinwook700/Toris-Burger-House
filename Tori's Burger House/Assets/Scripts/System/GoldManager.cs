@@ -34,11 +34,8 @@ public class GoldManager : MonoBehaviour
 
     public void AddGold(int amount)
     {
-        if (amount > 0)
-        {
-            gold += amount;
-            UpdateGoldUI();
-        }
+        gold += amount;
+        UpdateGoldUI();
     }
     private void UpdateGoldUI()
     {
