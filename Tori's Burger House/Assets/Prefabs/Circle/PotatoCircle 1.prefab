@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4563050239723270819}
   - component: {fileID: 8136101918320547608}
   m_Layer: 0
-  m_Name: MeatCircle2
+  m_Name: PotatoCircle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 18a580fd8945c2c43bac150cb9fee81c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 765cbe99838c2e04b9fe62f2a272aea1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,12 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64320206acc848e4ea834cf38435d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientType: 15
+  IngredientType: 10
   offset: {x: 0, y: 0}
   isDragging: 0
   isDragged: 0
-  canDrag: 1
-  isChange: 0
+  canDrag: 0
+  isChange: 1
   firstDrag: 0
   changePrefab: {fileID: 0}
 --- !u!58 &8136101918320547608

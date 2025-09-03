@@ -103,6 +103,9 @@ MonoBehaviour:
   isDragging: 0
   isDragged: 0
   canDrag: 0
+  isChange: 1
+  firstDrag: 0
+  changePrefab: {fileID: 0}
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0

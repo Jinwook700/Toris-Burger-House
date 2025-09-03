@@ -11,6 +11,7 @@ public class Drag : MonoBehaviour
     public bool isDragged;
     public bool canDrag;
     public bool isChange = false;
+    public bool firstDrag = false;
 
     [SerializeField] private GameObject changePrefab; // 바꿀 Prefab을 Inspector에서 할당
 
@@ -45,6 +46,11 @@ public class Drag : MonoBehaviour
     {
         if (canDrag)
         {
+            if (!firstDrag)
+            {
+                firstDrag = true;
+            }
+
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = (Vector2)mousePos + offset;
         }

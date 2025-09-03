@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2381951737024972371}
   - component: {fileID: 23869944012509769}
-  - component: {fileID: 4563050239723270819}
   - component: {fileID: 8136101918320547608}
+  - component: {fileID: 761444313810730253}
   m_Layer: 0
   m_Name: BunCircle1
   m_TagString: Untagged
@@ -86,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4563050239723270819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378900081648149135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64320206acc848e4ea834cf38435d401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IngredientType: 12
-  offset: {x: 0, y: 0}
-  isDragging: 0
-  isDragged: 0
-  canDrag: 1
-  isChange: 0
-  changePrefab: {fileID: 0}
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,3 +121,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &761444313810730253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378900081648149135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810125a8205227c41ae71ca4333b771c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientType: 12
+  offset: {x: 0, y: 0}
+  isDragging: 0
+  isDragged: 0
+  canDrag: 1
+  isChange: 0
+  firstDrag: 0
+  changePrefab: {fileID: 0}
+  autoChangePrefab: {fileID: 378900081648149135, guid: ac1b828090415a4438e07076e77b5ac4, type: 3}
