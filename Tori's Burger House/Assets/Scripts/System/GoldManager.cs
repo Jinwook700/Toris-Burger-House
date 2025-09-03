@@ -13,6 +13,7 @@ public class GoldManager : MonoBehaviour
     public TextMeshProUGUI goldText;
 
     public int gold;
+    public int firstGold;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class GoldManager : MonoBehaviour
 
     private void Start()
     {
-        gold = 10000;
+        gold = firstGold;
         UpdateGoldUI();
     }
 
