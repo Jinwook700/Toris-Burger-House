@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5374856331977227213}
   - component: {fileID: 2510676028766783378}
   - component: {fileID: 4054955269952573443}
-  - component: {fileID: 7089671686079913500}
+  - component: {fileID: 4342753722411592561}
+  - component: {fileID: 8166064949076489681}
   m_Layer: 0
   m_Name: JuiceBowl
   m_TagString: Bowl
@@ -159,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7089671686079913500
+--- !u!114 &4342753722411592561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +169,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 521814248518069416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2264776311686b449f5e7fcbf2e08e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 28ce69ac7944fb34198bdb958052e5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8166064949076489681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521814248518069416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thisIngredientTypes: 020000000300000008000000
@@ -184,7 +197,8 @@ GameObject:
   - component: {fileID: 7506620171159430922}
   - component: {fileID: 9042025509431812098}
   - component: {fileID: 5038420625360665181}
-  - component: {fileID: 1411587694463050183}
+  - component: {fileID: 7381299432828127863}
+  - component: {fileID: 7846609599668907690}
   m_Layer: 0
   m_Name: BurgerBowl
   m_TagString: Bowl
@@ -331,7 +345,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1411587694463050183
+--- !u!114 &7381299432828127863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,10 +354,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3796665128869986696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2264776311686b449f5e7fcbf2e08e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 758be386be0104646a24b524f775ce78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 0000000001000000050000000600000007000000090000000b000000
+--- !u!114 &7846609599668907690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796665128869986696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisIngredientTypes: 0c0000000d00000001000000050000000e0000000f00000007000000090000000b000000
 --- !u!1 &5244173655257175541
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9142128155521885427}
+  - component: {fileID: 6132051184995089071}
   - component: {fileID: 2318277384878684786}
   m_Layer: 0
   m_Name: Plate
@@ -369,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5244173655257175541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.201729, y: -1.8842661, z: 0}
   m_LocalScale: {x: 1, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
@@ -379,6 +406,21 @@ Transform:
   - {fileID: 8570564135465071600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6132051184995089071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244173655257175541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23625f9a2359f247be35788c3887932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burgerBowl: {fileID: 7381299432828127863}
+  potatoBowl: {fileID: 882242161801062800}
+  juiceBowl: {fileID: 4342753722411592561}
 --- !u!212 &2318277384878684786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -443,7 +485,8 @@ GameObject:
   - component: {fileID: 8031117096560050576}
   - component: {fileID: 4328335150408506108}
   - component: {fileID: 5315707443994356904}
-  - component: {fileID: 2280521410640501585}
+  - component: {fileID: 882242161801062800}
+  - component: {fileID: 3325511204667959170}
   m_Layer: 0
   m_Name: PotatoBowl
   m_TagString: Bowl
@@ -590,7 +633,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2280521410640501585
+--- !u!114 &882242161801062800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -599,7 +642,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6631546994165086292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2264776311686b449f5e7fcbf2e08e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 690b22c09d3481b42bcdda24979fe93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisIngredientTypes: 0a000000
+--- !u!114 &3325511204667959170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6631546994165086292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780bad76df8adaa48a15db4248156e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisIngredientTypes: 0a000000100000001100000012000000

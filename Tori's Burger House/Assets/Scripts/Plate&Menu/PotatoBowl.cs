@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotatoBowl : MonoBehaviour
+public class PotatoBowl : MonoBehaviour, IBowlHandler
 {
     private PlateController plate;
     private List<int> ingredients = new List<int>();
@@ -11,9 +11,9 @@ public class PotatoBowl : MonoBehaviour
         plate = plateController;
     }
 
-    public void AddIngredient(int ingredientIndex)
+    public void OnIngredientAdded(int ingredientIndex)
     {
-        ingredients.Clear(); // 감자튀김은 단일이니까 항상 하나만
+        ingredients.Clear(); // 감자는 항상 단일
         ingredients.Add(ingredientIndex);
         plate.OnBowlUpdated();
     }

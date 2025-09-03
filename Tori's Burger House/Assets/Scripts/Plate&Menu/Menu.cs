@@ -39,9 +39,9 @@ public class Menu : MonoBehaviour
 
         int ingredientCount = 3;
 
-        // 새로운 조합 찾기
+        // 새로운 햄버거 3개 조합 찾기
         bool validCombination = false;
-        int maxTries = 100; // 무한 루프 방지
+        int maxTries = 100;
         while (!validCombination && maxTries-- > 0)
         {
             SelectedIngredientIndices.Clear();
@@ -52,7 +52,6 @@ public class Menu : MonoBehaviour
                 SelectedIngredientIndices.Add(ingredientIndex);
             }
 
-            // 기존 조합과 동일하지 않은지 검사
             validCombination = true;
             foreach (var combo in existingCombinations)
             {
@@ -64,8 +63,24 @@ public class Menu : MonoBehaviour
             }
         }
 
-        // UI 생성
-        foreach (int ingredientIndex in SelectedIngredientIndices)
+        // 감자튀김 추가 (예시로 PotatoCircle 사용)
+        int potatoIndex = (int)IngredientData.IngredientType.PotatoCircle;
+        SelectedIngredientIndices.Add(potatoIndex);
+
+        // 음료 추가 (색깔에 따라 결정)
+        int drinkIndex = -1;
+        if (menuColor == Color.red)
+            drinkIndex = (int)IngredientData.IngredientType.Cola;
+        else if (menuColor == new Color(0.5f, 1f, 0.5f)) // 초록
+            drinkIndex = (int)IngredientData.IngredientType.Cider;
+        else if (menuColor == new Color(1f, 0.65f, 0f)) // 주황
+            drinkIndex = (int)IngredientData.IngredientType.OrangeJuice;
+
+        if (drinkIndex >= 0)
+            SelectedIngredientIndices.Add(drinkIndex);
+
+        // UI 생성 (햄버거 3개만 그림에 표시)
+        foreach (int ingredientIndex in SelectedIngredientIndices.GetRange(0, 3))
         {
             GameObject prefab = ingredientData.ingredientPrefabs[ingredientIndex];
             GameObject ingredientUI = Instantiate(ingredientSlotPrefab, ingredientContainer);
@@ -80,6 +95,8 @@ public class Menu : MonoBehaviour
 
             selectedIngredients.Add(prefab);
         }
+
+        Debug.Log($"생성된 메뉴 조합: {string.Join(", ", SelectedIngredientIndices)}");
     }
 
     // 두 조합이 동일한지 비교 (순서 고려)

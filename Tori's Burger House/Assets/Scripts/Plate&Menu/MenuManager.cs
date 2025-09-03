@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
     }
     public void AddMenuCombination(List<int> combination)
     {
-        if (combination != null && combination.Count == 3)
+        if (combination != null && combination.Count == 5)
         {
             menuCombinations.Add(combination);
 

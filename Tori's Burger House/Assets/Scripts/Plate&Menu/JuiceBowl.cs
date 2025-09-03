@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JuiceBowl : MonoBehaviour
+public class JuiceBowl : MonoBehaviour, IBowlHandler
 {
     private PlateController plate;
     private List<int> ingredients = new List<int>();
@@ -11,12 +11,12 @@ public class JuiceBowl : MonoBehaviour
         plate = plateController;
     }
 
-    public void AddIngredient(int ingredientIndex)
+    public void OnIngredientAdded(int ingredientIndex)
     {
-        ingredients.Clear(); // 음료도 단일
+        ingredients.Clear(); // 음료는 단일
         ingredients.Add(ingredientIndex);
 
-        // 음료 들어오면 제출 실행
+        // 음료 들어오면 Plate 제출 실행
         plate.OnJuiceAdded();
     }
 

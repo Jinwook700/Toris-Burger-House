@@ -26,17 +26,18 @@ public class PlateController : MonoBehaviour
     // 음료수가 들어올 때 호출됨 (제출 트리거)
     public void OnJuiceAdded()
     {
-        if (isSubmitted) return; // 중복 방지
+        if (isSubmitted) return;
         isSubmitted = true;
 
         List<int> combination = GetPlateCombination();
-
-        Debug.Log("제출된 조합: " + string.Join(", ", combination));
+        Debug.Log("제출된 접시 조합: " + string.Join(", ", combination));
 
         // MenuManager의 메뉴와 비교
         bool isCorrect = false;
         foreach (var menuCombo in MenuManager.Instance.GetAllMenuCombinations())
         {
+            Debug.Log("메뉴 조합과 비교: " + string.Join(", ", menuCombo));
+
             if (AreCombinationsEqual(menuCombo, combination))
             {
                 isCorrect = true;
@@ -46,12 +47,11 @@ public class PlateController : MonoBehaviour
 
         if (isCorrect)
         {
-            Debug.Log("정답! 메뉴와 일치합니다 ");
-            // 메뉴 제거 & 새로 생성 로직 실행
+            Debug.Log(" 정답! 메뉴와 일치합니다");
         }
         else
         {
-            Debug.Log("실패! 메뉴와 다릅니다 ");
+            Debug.Log(" 실패! 메뉴와 다릅니다");
         }
     }
 
@@ -60,13 +60,19 @@ public class PlateController : MonoBehaviour
     {
         List<int> result = new List<int>();
 
-        // 햄버거는 5겹 (BurgerBowl 내부 리스트 그대로 가져오기)
-        result.AddRange(burgerBowl.GetIngredients());
+        // 햄버거: 빵 - [3개] - 빵 → 가운데 3개만 사용
+        List<int> burger = burgerBowl.GetIngredients();
+        if (burger.Count >= 5)
+        {
+            result.Add(burger[1]); // 두 번째 (빵 다음)
+            result.Add(burger[2]); // 세 번째
+            result.Add(burger[3]); // 네 번째
+        }
 
-        // 감자튀김 1개
+        // 감자튀김
         result.AddRange(potatoBowl.GetIngredients());
 
-        // 음료 1개
+        // 음료
         result.AddRange(juiceBowl.GetIngredients());
 
         return result;

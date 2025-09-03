@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurgerBowl : MonoBehaviour
+public class BurgerBowl : MonoBehaviour, IBowlHandler
 {
     private PlateController plate;
     private List<int> ingredients = new List<int>();
@@ -11,7 +11,7 @@ public class BurgerBowl : MonoBehaviour
         plate = plateController;
     }
 
-    public void AddIngredient(int ingredientIndex)
+    public void OnIngredientAdded(int ingredientIndex)
     {
         ingredients.Add(ingredientIndex);
         plate.OnBowlUpdated();
