@@ -78,23 +78,24 @@ public class PlateController : MonoBehaviour
     {
         int score = 1000;
 
-        // 1. 음료 확인
+        // 1. 음료 확인 (메뉴판에 해당 음료가 있어야 함)
         int drink = plateCombo[plateCombo.Count - 1];
-        if (!(drink == (int)IngredientData.IngredientType.Cola ||
-              drink == (int)IngredientData.IngredientType.Cider ||
-              drink == (int)IngredientData.IngredientType.OrangeJuice))
+        bool hasDrinkMenu = false;
+        foreach (var menuCombo in MenuManager.Instance.GetAllMenuCombinations())
         {
-            Debug.Log("음료 없음 → 0점");
+            if (menuCombo.Count >= 5 && menuCombo[4] == drink)
+            {
+                hasDrinkMenu = true;
+                break;
+            }
+        }
+        if (!hasDrinkMenu)
+        {
+            Debug.Log("해당 음료가 포함된 메뉴 없음 → 0점");
             return 0;
         }
 
-        // 2. 햄버거 확인
-        if (plateCombo.Count < 7) // 최소 버거(5)+감자+음료
-        {
-            Debug.Log("햄버거 5개 미만 → 0점");
-            return 0;
-        }
-
+        // 2. 햄버거 확인 (재료 5개 이상인지)
         List<int> burger = burgerBowl.GetIngredients();
         if (burger.Count < 5)
         {
@@ -111,7 +112,7 @@ public class PlateController : MonoBehaviour
             return 0;
         }
 
-        // 4. 중간 재료 확인
+        // 4. 중간 재료 확인 (3개만)
         List<int> middleIngredients = new List<int>
     {
         burger[1],
@@ -132,9 +133,20 @@ public class PlateController : MonoBehaviour
             menuCombo[2]
         };
 
-            if (AreCombinationsEqual(menuBurger, middleIngredients) &&
-                menuCombo[3] == plateCombo[3] &&
-                menuCombo[4] == drink)
+            bool middleMatch = true;
+            for (int i = 0; i < 3; i++)
+            {
+                if (!(middleIngredients[i] == menuBurger[i] ||
+                      (IsMeat(middleIngredients[i]) && IsMeat(menuBurger[i]))))
+                {
+                    middleMatch = false;
+                    break;
+                }
+            }
+
+            if (middleMatch &&
+                menuCombo[3] == plateCombo[3] && // 감자 비교
+                menuCombo[4] == drink)           // 음료 비교
             {
                 match = true;
                 break;
@@ -179,9 +191,14 @@ public class PlateController : MonoBehaviour
 
     private bool IsBun(int ingredient)
     {
-        return ingredient == (int)IngredientData.IngredientType.BunCircle ||
-               ingredient == (int)IngredientData.IngredientType.BunCircle1 ||
+        return ingredient == (int)IngredientData.IngredientType.BunCircle1 ||
                ingredient == (int)IngredientData.IngredientType.BunCircle2;
     }
 
+    private bool IsMeat(int ingredient)
+    {
+        return ingredient == (int)IngredientData.IngredientType.MeatCircle ||
+               ingredient == (int)IngredientData.IngredientType.MeatCircle1 ||
+               ingredient == (int)IngredientData.IngredientType.MeatCircle2;
+    }
 }
