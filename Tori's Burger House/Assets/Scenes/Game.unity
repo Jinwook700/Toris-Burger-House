@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 1962572914}
   gold: 0
-  firstGold: 300
+  firstGold: 10000
 --- !u!1 &813440176
 GameObject:
   m_ObjectHideFlags: 0

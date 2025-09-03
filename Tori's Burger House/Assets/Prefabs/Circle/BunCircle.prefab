@@ -103,6 +103,8 @@ MonoBehaviour:
   isDragging: 0
   isDragged: 0
   canDrag: 0
+  isChange: 1
+  changePrefab: {fileID: 378900081648149135, guid: 68013e066ba9f744b8246a6e9c985d4f, type: 3}
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4563050239723270819}
   - component: {fileID: 8136101918320547608}
   m_Layer: 0
-  m_Name: MeatCircle
+  m_Name: BunCircle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 0dfdd55b705673640af689c2ded8650e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1b8de9b871ba6249900761199cbdc52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,13 +98,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64320206acc848e4ea834cf38435d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientType: 6
+  IngredientType: 0
   offset: {x: 0, y: 0}
   isDragging: 0
   isDragged: 0
   canDrag: 0
-  isChange: 1
-  changePrefab: {fileID: 378900081648149135, guid: e7002bc45b2e87b4fa1756b6e3784d94, type: 3}
+  isChange: 0
+  changePrefab: {fileID: 0}
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0
