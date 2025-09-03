@@ -34,26 +34,49 @@ public class PlateController : MonoBehaviour
 
         int score = CalculateScore(combination);
 
-        if (score > 0)
+        // 메뉴 판정은 감튀 무시 (버거+음료만 비교)
+        bool matched = false;
+        MenuPlate menuPlate = FindObjectOfType<MenuPlate>();
+        Menu matchedMenu = null;
+
+        foreach (Transform child in menuPlate.menuContainer)
+        {
+            Menu menu = child.GetComponent<Menu>();
+            if (menu != null && IsSameMenu(menu.SelectedIngredientIndices, combination))
+            {
+                matched = true;
+                matchedMenu = menu;
+                break;
+            }
+        }
+
+        if (matched)
         {
             Debug.Log("정답! 메뉴와 일치합니다");
             Debug.Log($"획득 점수: {score}");
 
             // 맞춘 메뉴 삭제
-            MenuManager.Instance.RemoveMenuCombination(combination);
+            if (matchedMenu != null)
+            {
+                MenuManager.Instance.RemoveMenuCombination(matchedMenu.SelectedIngredientIndices);
+                Destroy(matchedMenu.gameObject);
+                menuPlate.menuList.Remove(matchedMenu);
+            }
 
-            // 새 메뉴 생성
-            FindObjectOfType<MenuPlate>().SpawnNewMenu();
+            ClearPlate();
+            isSubmitted = false;
+
+            // 새 메뉴 추가
+            menuPlate.SpawnNewMenu();
         }
         else
         {
             Debug.Log("실패! 메뉴와 다릅니다");
-
             ClearPlate();
-
             isSubmitted = false;
         }
     }
+
 
 
     // 현재 Plate의 조합 추출
@@ -230,5 +253,24 @@ public class PlateController : MonoBehaviour
         potatoBowl.ClearIngredients();
         juiceBowl.ClearIngredients();
     }
+    private bool IsSameMenu(List<int> menuCombo, List<int> plateCombo)
+    {
+        if (menuCombo.Count < 5 || plateCombo.Count < 4) return false;
 
+        // 버거 중간 재료 3개 비교 (고기/탄고기 구분 없음)
+        for (int i = 0; i < 3; i++)
+        {
+            if (!(menuCombo[i] == plateCombo[i] ||
+                  (IsMeat(menuCombo[i]) && IsMeat(plateCombo[i]))))
+            {
+                return false;
+            }
+        }
+
+        // 음료 비교 (menuCombo[4] vs plateCombo 마지막)
+        if (menuCombo[4] != plateCombo[plateCombo.Count - 1])
+            return false;
+
+        return true;
+    }
 }

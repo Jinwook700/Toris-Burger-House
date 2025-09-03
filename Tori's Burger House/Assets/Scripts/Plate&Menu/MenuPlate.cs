@@ -8,7 +8,7 @@ public class MenuPlate : MonoBehaviour
     public int menuCount = 4;
     public IngredientData ingredientData;
 
-    private List<Menu> menuList = new List<Menu>();
+    public List<Menu> menuList = new List<Menu>();
 
     // 메뉴 조합 관리용
     public List<List<int>> allMenuCombinations = new List<List<int>>();
@@ -47,16 +47,22 @@ public class MenuPlate : MonoBehaviour
 
     public void SpawnNewMenu()
     {
-        // 기존 메뉴 삭제
-        foreach (Transform child in menuContainer)
+        GameObject menuObj = Instantiate(menuItemPrefab, menuContainer);
+        Menu menu = menuObj.GetComponent<Menu>();
+        if (menu != null)
         {
-            Destroy(child.gameObject);
+            Color randomColor = availableColors[Random.Range(0, availableColors.Length)];
+
+            // 기존 조합 가져오기
+            List<List<int>> existingCombinations = MenuManager.Instance.GetAllMenuCombinations();
+            menu.InitializeMenu(ingredientData, existingCombinations, randomColor);
+
+            menuList.Add(menu);
+            menuColors.Add(randomColor);
+
+            // MenuManager에 추가
+            MenuManager.Instance.AddMenuCombination(menu.SelectedIngredientIndices);
         }
-
-        menuList.Clear();
-        allMenuCombinations.Clear();
-
-        // 다시 메뉴 생성
-        Start();
     }
+
 }
