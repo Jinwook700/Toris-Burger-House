@@ -126,13 +126,15 @@ public class PlateController : MonoBehaviour
         {
             if (menuCombo.Count < 5) continue;
 
+            // 메뉴의 버거 중간 재료
             List<int> menuBurger = new List<int>
-        {
-            menuCombo[0],
-            menuCombo[1],
-            menuCombo[2]
-        };
+    {
+        menuCombo[0],
+        menuCombo[1],
+        menuCombo[2]
+    };
 
+            // 중간 재료 비교 (고기/탄고기 구분 없음)
             bool middleMatch = true;
             for (int i = 0; i < 3; i++)
             {
@@ -144,9 +146,13 @@ public class PlateController : MonoBehaviour
                 }
             }
 
-            if (middleMatch &&
-                menuCombo[3] == plateCombo[3] && // 감자 비교
-                menuCombo[4] == drink)           // 음료 비교
+            // 빵 확인 (시작과 끝이 둘 다 빵인지)
+            bool bunMatch = IsBun(burger[0]) && IsBun(burger[burger.Count - 1]);
+
+            // 메뉴 음료 비교
+            bool drinkMatch = (menuCombo[4] == drink);
+
+            if (middleMatch && bunMatch && drinkMatch)
             {
                 match = true;
                 break;
