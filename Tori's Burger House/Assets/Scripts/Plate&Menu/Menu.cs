@@ -10,31 +10,29 @@ public class Menu : MonoBehaviour
 
     private List<GameObject> selectedIngredients = new List<GameObject>();
 
-    // 메뉴가 가진 조합 (인덱스 저장)
+    // 메뉴가 가진 조합 (인덱스 저장: enum 기준)
     public List<int> SelectedIngredientIndices { get; private set; } = new List<int>();
 
-    // 배경 색상 적용용
-    private Image background;
-
-    private void Awake()
+    // 사용할 수 있는 재료 후보 (enum 값)
+    private int[] availableBurgerIngredients = new int[]
     {
-        background = GetComponent<Image>();
-    }
+        (int)IngredientData.IngredientType.TomatoCircle,
+        (int)IngredientData.IngredientType.LettuceCircle,
+        (int)IngredientData.IngredientType.OnionCircle,
+        (int)IngredientData.IngredientType.PickleCircle,
+        (int)IngredientData.IngredientType.MeatCircle, 
+        (int)IngredientData.IngredientType.CheeseCircle
+    };
 
     public void InitializeMenu(IngredientData ingredientData, List<List<int>> existingCombinations, Color menuColor)
     {
         selectedIngredients.Clear();
         SelectedIngredientIndices.Clear();
 
-        // 배경 색상 설정
+        Image background = GetComponent<Image>();
         if (background != null)
-            background.color = menuColor;
-
-        GridLayoutGroup grid = ingredientContainer.GetComponent<GridLayoutGroup>();
-        if (grid == null)
         {
-            Debug.LogError("Ingredient Container에 GridLayoutGroup 없음!");
-            return;
+            background.color = menuColor;
         }
 
         int ingredientCount = 3;
@@ -48,7 +46,7 @@ public class Menu : MonoBehaviour
 
             for (int i = 0; i < ingredientCount; i++)
             {
-                int ingredientIndex = Random.Range(0, ingredientData.ingredientPrefabs.Count);
+                int ingredientIndex = availableBurgerIngredients[Random.Range(0, availableBurgerIngredients.Length)];
                 SelectedIngredientIndices.Add(ingredientIndex);
             }
 
@@ -63,9 +61,8 @@ public class Menu : MonoBehaviour
             }
         }
 
-        // 감자튀김 추가 (예시로 PotatoCircle 사용)
-        int potatoIndex = (int)IngredientData.IngredientType.PotatoCircle;
-        SelectedIngredientIndices.Add(potatoIndex);
+        // 감자튀김 추가 (기본값: 잘 만든 감자튀김)
+        SelectedIngredientIndices.Add((int)IngredientData.IngredientType.PotatoCircle2);
 
         // 음료 추가 (색깔에 따라 결정)
         int drinkIndex = -1;
@@ -79,7 +76,7 @@ public class Menu : MonoBehaviour
         if (drinkIndex >= 0)
             SelectedIngredientIndices.Add(drinkIndex);
 
-        // UI 생성 (햄버거 3개만 그림에 표시)
+        // UI 생성 (햄버거 3개만 표시)
         foreach (int ingredientIndex in SelectedIngredientIndices.GetRange(0, 3))
         {
             GameObject prefab = ingredientData.ingredientPrefabs[ingredientIndex];
@@ -96,10 +93,9 @@ public class Menu : MonoBehaviour
             selectedIngredients.Add(prefab);
         }
 
-        Debug.Log($"생성된 메뉴 조합: {string.Join(", ", SelectedIngredientIndices)}");
+        Debug.Log($"생성된 메뉴 조합(enum 번호): {string.Join(", ", SelectedIngredientIndices)}");
     }
 
-    // 두 조합이 동일한지 비교 (순서 고려)
     private bool AreCombinationsEqual(List<int> combo1, List<int> combo2)
     {
         if (combo1.Count != combo2.Count) return false;
