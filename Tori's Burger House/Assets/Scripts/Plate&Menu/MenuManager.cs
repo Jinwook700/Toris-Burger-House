@@ -25,12 +25,6 @@ public class MenuManager : MonoBehaviour
         if (combination != null && combination.Count == 5)
         {
             menuCombinations.Add(combination);
-
-            Debug.Log($"MenuManager에 조합 추가됨: {string.Join(", ", combination)}");
-        }
-        else
-        {
-            Debug.LogError("유효하지 않은 메뉴 조합이 전달되었습니다.");
         }
     }
 
@@ -46,7 +40,6 @@ public class MenuManager : MonoBehaviour
             if (AreCombinationsEqual(menuCombinations[i], combination))
             {
                 menuCombinations.RemoveAt(i);
-                Debug.Log($"메뉴 삭제됨: {string.Join(", ", combination)}");
                 return;
             }
         }

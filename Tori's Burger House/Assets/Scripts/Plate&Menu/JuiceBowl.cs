@@ -13,10 +13,9 @@ public class JuiceBowl : MonoBehaviour, IBowlHandler
 
     public void OnIngredientAdded(int ingredientIndex)
     {
-        ingredients.Clear(); // 음료는 단일
+        ingredients.Clear();
         ingredients.Add(ingredientIndex);
 
-        // 음료 들어오면 Plate 제출 실행
         plate.OnJuiceAdded();
     }
 
@@ -27,10 +26,8 @@ public class JuiceBowl : MonoBehaviour, IBowlHandler
 
     public void ClearIngredients()
     {
-        // 리스트 비우기
         ingredients.Clear();
 
-        // Bowl 안의 실제 오브젝트도 다 제거
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);

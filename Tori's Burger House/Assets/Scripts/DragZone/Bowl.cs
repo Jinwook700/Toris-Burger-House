@@ -14,12 +14,12 @@ public class Bowl : DragZone
     public List<IngredientType> thisIngredientTypes;
 
     [SerializeField]
-    private int maxCapacity = 3; // 최대 수용 개수 (Inspector에서 설정 가능)
+    private int maxCapacity = 3;
 
-    private int currentCount = 0; // 현재 들어온 아이템 개수
+    private int currentCount = 0;
 
     [SerializeField]
-    private float stackOffsetY = 0.1f; // 아이템 간 y축 간격
+    private float stackOffsetY = 0.1f;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -27,7 +27,6 @@ public class Bowl : DragZone
 
         if (item != null && !item.isDragging && !item.isDragged)
         {
-            // 용량 꽉 찼으면 리턴
             if (currentCount >= maxCapacity)
                 return;
 
@@ -39,7 +38,6 @@ public class Bowl : DragZone
                     _soundObject = Sound.Play("DragEnd", false);
                     _soundObject.SetVolume(1.3f);
 
-                    // 쌓이는 위치 계산
                     Vector3 newPos = transform.position + new Vector3(0, stackOffsetY * currentCount, 0);
                     item.transform.position = newPos;
                     item.transform.SetParent(transform);
@@ -47,23 +45,21 @@ public class Bowl : DragZone
                     item.isDragged = true;
                     item.canDrag = false;
 
-                    //  SpriteRenderer sortingOrder 적용
                     SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
                     if (sr != null)
                     {
                         sr.sortingOrder = currentCount + 4;
                     }
 
-                    currentCount++; // 현재 개수 증가
+                    currentCount++;
 
-                    // BowlController(구체적인 Bowl 스크립트)에 알림
                     IBowlHandler handler = GetComponent<IBowlHandler>();
                     if (handler != null)
                     {
                         handler.OnIngredientAdded((int)item.IngredientType);
                     }
 
-                    break; // 매칭된 타입 찾으면 반복문 종료
+                    break;
                 }
             }
         }

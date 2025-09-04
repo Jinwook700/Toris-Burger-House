@@ -10,10 +10,8 @@ public class Menu : MonoBehaviour
 
     private List<GameObject> selectedIngredients = new List<GameObject>();
 
-    // 메뉴가 가진 조합 (인덱스 저장: enum 기준)
     public List<int> SelectedIngredientIndices { get; private set; } = new List<int>();
 
-    // 사용할 수 있는 재료 후보 (enum 값)
     private int[] availableBurgerIngredients = new int[]
     {
         (int)IngredientData.IngredientType.TomatoCircle,
@@ -37,7 +35,6 @@ public class Menu : MonoBehaviour
 
         int ingredientCount = 3;
 
-        // 새로운 햄버거 3개 조합 찾기
         bool validCombination = false;
         int maxTries = 100;
         while (!validCombination && maxTries-- > 0)
@@ -61,22 +58,19 @@ public class Menu : MonoBehaviour
             }
         }
 
-        // 감자튀김 추가 (기본값: 잘 만든 감자튀김)
         SelectedIngredientIndices.Add((int)IngredientData.IngredientType.PotatoCircle2);
 
-        // 음료 추가 (색깔에 따라 결정)
         int drinkIndex = -1;
         if (menuColor == Color.red)
             drinkIndex = (int)IngredientData.IngredientType.Cola;
-        else if (menuColor == new Color(0.5f, 1f, 0.5f)) // 초록
+        else if (menuColor == new Color(0.5f, 1f, 0.5f))
             drinkIndex = (int)IngredientData.IngredientType.Cider;
-        else if (menuColor == new Color(1f, 0.65f, 0f)) // 주황
+        else if (menuColor == new Color(1f, 0.65f, 0f))
             drinkIndex = (int)IngredientData.IngredientType.OrangeJuice;
 
         if (drinkIndex >= 0)
             SelectedIngredientIndices.Add(drinkIndex);
 
-        // UI 생성 (햄버거 3개만 표시)
         foreach (int ingredientIndex in SelectedIngredientIndices.GetRange(0, 3))
         {
             GameObject prefab = ingredientData.ingredientPrefabs[ingredientIndex];
@@ -92,8 +86,6 @@ public class Menu : MonoBehaviour
 
             selectedIngredients.Add(prefab);
         }
-
-        Debug.Log($"생성된 메뉴 조합(enum 번호): {string.Join(", ", SelectedIngredientIndices)}");
     }
 
     private bool AreCombinationsEqual(List<int> combo1, List<int> combo2)

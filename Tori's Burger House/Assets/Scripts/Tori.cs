@@ -42,8 +42,6 @@ public class Tori : MonoBehaviour
             {
                 TextManager.Instance.SetText(textMessage);
             }
-            
-            Debug.Log("현재 상태: " + newState.ToString());
         }
     }
 }

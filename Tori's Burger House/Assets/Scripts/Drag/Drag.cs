@@ -21,9 +21,9 @@ public class Drag : MonoBehaviour
 
     public float delayTime = 2f;
 
-    [SerializeField] private GameObject changePrefab; // 바꿀 Prefab을 Inspector에서 할당
+    [SerializeField] private GameObject changePrefab;
 
-    [SerializeField] protected Sprite normalSprite;   // 기본 스프라이트
+    [SerializeField] protected Sprite normalSprite;
     [SerializeField] private Sprite changedSprite;
 
     private void Start()
@@ -43,10 +43,9 @@ public class Drag : MonoBehaviour
             StartCoroutine(DestoryThis());
         }
 
-        // Zone에 장착된 상태이고, 교체 가능할 때
         if (isDragged && isChange)
         {
-            isChange = false; // 중복 실행 방지
+            isChange = false;
             StartCoroutine(ChangeAfterDelay(delayTime));
         }
     }

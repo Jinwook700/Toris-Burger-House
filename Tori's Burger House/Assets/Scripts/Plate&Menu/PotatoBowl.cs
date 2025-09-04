@@ -13,7 +13,7 @@ public class PotatoBowl : MonoBehaviour, IBowlHandler
 
     public void OnIngredientAdded(int ingredientIndex)
     {
-        ingredients.Clear(); // 감자는 항상 단일
+        ingredients.Clear();
         ingredients.Add(ingredientIndex);
         plate.OnBowlUpdated();
     }
@@ -25,10 +25,8 @@ public class PotatoBowl : MonoBehaviour, IBowlHandler
 
     public void ClearIngredients()
     {
-        // 리스트 비우기
         ingredients.Clear();
 
-        // Bowl 안의 실제 오브젝트도 다 제거
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
