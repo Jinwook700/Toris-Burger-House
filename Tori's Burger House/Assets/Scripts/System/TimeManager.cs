@@ -15,6 +15,8 @@ public class TimeManager : MonoBehaviour
     public float setTime = 180f;
     private bool isTimerRunning = false;
 
+    public float clearGold;
+
     private void Awake()
     {
         if (Instance == null)
@@ -51,7 +53,7 @@ public class TimeManager : MonoBehaviour
                 UpdateUIText();
 
                 int currentGold = GoldManager.Instance.gold;
-                if (currentGold >= 20000)
+                if (currentGold >= clearGold)
                 {
                     SceneManager.LoadScene("Finish");
                     GameManager.Instance.totalGold = currentGold;

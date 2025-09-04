@@ -4232,6 +4232,7 @@ MonoBehaviour:
   timeText: {fileID: 266810081}
   time: 0
   setTime: 180
+  clearGold: 18000
 --- !u!1 &1911439788
 GameObject:
   m_ObjectHideFlags: 0
