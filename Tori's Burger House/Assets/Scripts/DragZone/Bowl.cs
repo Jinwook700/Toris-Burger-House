@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static IngredientData;
-
 public interface IBowlHandler
 {
     void OnIngredientAdded(int ingredientIndex);
@@ -18,6 +17,9 @@ public class Bowl : DragZone
 
     private int currentCount = 0; // 현재 들어온 아이템 개수
 
+    [SerializeField]
+    private float stackOffsetY = 0.1f; // 아이템 간 y축 간격
+
     void OnTriggerStay2D(Collider2D other)
     {
         Drag item = other.GetComponent<Drag>();
@@ -32,12 +34,20 @@ public class Bowl : DragZone
             {
                 if (item.IngredientType == acceptedType)
                 {
-                    // 위치 고정
-                    item.transform.position = transform.position;
+                    // 쌓이는 위치 계산
+                    Vector3 newPos = transform.position + new Vector3(0, stackOffsetY * currentCount, 0);
+                    item.transform.position = newPos;
                     item.transform.SetParent(transform);
 
                     item.isDragged = true;
                     item.canDrag = false;
+
+                    //  SpriteRenderer sortingOrder 적용
+                    SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
+                    if (sr != null)
+                    {
+                        sr.sortingOrder = currentCount + 4;
+                    }
 
                     currentCount++; // 현재 개수 증가
 
@@ -54,13 +64,11 @@ public class Bowl : DragZone
         }
     }
 
-    // 외부에서 Bowl 비울 때 (PlateController.ClearPlate 같은 곳에서 호출)
     public void ResetBowl()
     {
         currentCount = 0;
     }
 
-    // 자식들 Destroy되면 currentCount도 자동 초기화
     public void ClearBowlContents()
     {
         foreach (Transform child in transform)
@@ -70,3 +78,4 @@ public class Bowl : DragZone
         currentCount = 0;
     }
 }
+
