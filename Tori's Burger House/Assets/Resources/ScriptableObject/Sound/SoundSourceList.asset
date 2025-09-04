@@ -19,3 +19,39 @@ MonoBehaviour:
   - name: TitleBgm
     type: 1
     clip: {fileID: 8300000, guid: 70ddff8f3d41cce4694a358d6bd6aad9, type: 3}
+  - name: FinishBgm
+    type: 1
+    clip: {fileID: 8300000, guid: 981b99c2b1db49e4baf2754141c43ef2, type: 3}
+  - name: NotFinishBgm
+    type: 1
+    clip: {fileID: 8300000, guid: 86e1ff8960bd11f4997180b7dc005a33, type: 3}
+  - name: GameStart
+    type: 0
+    clip: {fileID: 8300000, guid: 6d526af3916f9d241853ebe3c681717c, type: 3}
+  - name: UiButton
+    type: 0
+    clip: {fileID: 8300000, guid: 40bd848ab45cc304c934c6f84c4ac1df, type: 3}
+  - name: DragStart
+    type: 0
+    clip: {fileID: 8300000, guid: 5976c0156e835424e9fe6fb19960d939, type: 3}
+  - name: DragEnd
+    type: 0
+    clip: {fileID: 8300000, guid: aad36feb0debe8541b232bea41ad5b00, type: 3}
+  - name: GoodSubmit
+    type: 0
+    clip: {fileID: 8300000, guid: 83fd2dd629852e146af41069fc8c3e2d, type: 3}
+  - name: BadSubmit
+    type: 0
+    clip: {fileID: 8300000, guid: 8a1abede2788d55458c4181eebad235c, type: 3}
+  - name: DoorSound
+    type: 0
+    clip: {fileID: 8300000, guid: 1088f88940ddc4948a34879963b1e64a, type: 3}
+  - name: FireSound
+    type: 0
+    clip: {fileID: 8300000, guid: 9e589e6d11e59a14e87c4a36ad6a505b, type: 3}
+  - name: DrinkSound
+    type: 0
+    clip: {fileID: 8300000, guid: e4fd36c96d5f48a459e73009b86b3972, type: 3}
+  - name: GoodChangeSound
+    type: 0
+    clip: {fileID: 8300000, guid: 13a9a06d4a498764cb359486c25bb9e9, type: 3}
