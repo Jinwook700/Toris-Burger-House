@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Sound;
 using UnityEngine;
 
 public class PlateController : MonoBehaviour
@@ -52,6 +53,10 @@ public class PlateController : MonoBehaviour
 
         if (matched)
         {
+            SoundObject _soundObject;
+            _soundObject = Sound.Play("GoodSubmit", false);
+            _soundObject.SetVolume(0.9f);
+
             Debug.Log("정답! 메뉴와 일치합니다");
             Debug.Log($"획득 점수: {score}");
             GoldManager.Instance.AddGold(score);
@@ -72,6 +77,10 @@ public class PlateController : MonoBehaviour
         }
         else
         {
+            SoundObject _soundObject;
+            _soundObject = Sound.Play("BadSubmit", false);
+            _soundObject.SetVolume(0.9f);
+
             Debug.Log("실패! 메뉴와 다릅니다");
             ClearPlate();
             isSubmitted = false;

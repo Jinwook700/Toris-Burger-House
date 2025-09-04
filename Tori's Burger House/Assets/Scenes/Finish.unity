@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmName: FinishBgm
   replay: 0
-  setVol: 1
+  setVol: 0.5
 --- !u!4 &1439650183
 Transform:
   m_ObjectHideFlags: 0
