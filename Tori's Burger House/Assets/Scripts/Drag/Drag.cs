@@ -14,6 +14,8 @@ public class Drag : MonoBehaviour
     public bool isChange = false;
     public bool firstDrag = false;
 
+    public string soundName;
+
     protected SpriteRenderer spriteRenderer;
     private bool spriteChanged = false;
 
@@ -106,6 +108,13 @@ public class Drag : MonoBehaviour
 
     IEnumerator ChangeAfterDelay(float delay)
     {
+        if (soundName == null)
+        {
+            SoundObject _soundObject;
+            _soundObject = Sound.Play(soundName, false);
+            _soundObject.SetVolume(1.3f);
+        }
+
         yield return new WaitForSeconds(delay);
 
         if (changePrefab != null)

@@ -104,7 +104,12 @@ MonoBehaviour:
   isDragged: 0
   canDrag: 0
   isChange: 1
+  firstDrag: 0
+  soundName: DrinkSound
+  delayTime: 2
   changePrefab: {fileID: 378900081648149135, guid: d23df8941e23d3447bc8a35d30c5331c, type: 3}
+  normalSprite: {fileID: 0}
+  changedSprite: {fileID: 0}
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0

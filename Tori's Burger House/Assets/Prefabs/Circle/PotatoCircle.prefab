@@ -105,8 +105,11 @@ MonoBehaviour:
   canDrag: 0
   isChange: 1
   firstDrag: 0
+  soundName: FireSound
   delayTime: 0.01
   changePrefab: {fileID: 378900081648149135, guid: 8764addeb0bfd294db43818ca4914853, type: 3}
+  normalSprite: {fileID: 0}
+  changedSprite: {fileID: 0}
 --- !u!58 &8136101918320547608
 CircleCollider2D:
   m_ObjectHideFlags: 0
