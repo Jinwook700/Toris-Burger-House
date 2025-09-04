@@ -10,7 +10,8 @@ public class DragZone : MonoBehaviour
 
         if (item != null && !item.isDragging && !item.isDragged)
         {
-            item.transform.position = transform.position;
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y, -1f);
+            item.transform.position = pos;
             item.isDragged = true;
         }
     }

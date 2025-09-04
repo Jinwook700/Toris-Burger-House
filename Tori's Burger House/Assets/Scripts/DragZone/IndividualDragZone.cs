@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static IngredientData;
 
@@ -44,7 +45,8 @@ public class IndividualDragZone : DragZone
             {
                 if (item.IngredientType == acceptedType)
                 {
-                    item.transform.position = transform.position;
+                    Vector3 pos = new Vector3(transform.position.x, transform.position.y, -1f);
+                    item.transform.position = pos;
                     item.isDragged = true;
                 }
             }
