@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Sound;
 using UnityEngine;
-using UnityEngine.Apple.ReplayKit;
 
 public class BgmPlay : MonoBehaviour
 {
