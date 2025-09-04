@@ -999,7 +999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12735f5c968196142b2f591a73363c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmName: TitleBgm
+  bgmName: FinishBgm
+  replay: 0
 --- !u!4 &1439650183
 Transform:
   m_ObjectHideFlags: 0
