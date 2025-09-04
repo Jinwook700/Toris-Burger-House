@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Sound;
 using UnityEngine;
 
 public class MiddleCircle : Drag
@@ -8,6 +9,10 @@ public class MiddleCircle : Drag
     public float ChangeTime = 5f;
     private void Start()
     {
+        SoundObject _soundObject;
+        _soundObject = Sound.Play("GoodChangeSound", false);
+        _soundObject.SetVolume(1.3f);
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (normalSprite != null)
