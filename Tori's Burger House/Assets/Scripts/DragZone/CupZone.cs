@@ -26,7 +26,6 @@ public class CupZone : MonoBehaviour
                     // 교체 프리팹 설정
                     if (drinkPrefab != null)
                     {
-                        item.isChange = true;
                         item.SetChangePrefab(drinkPrefab);
                     }
                 }
