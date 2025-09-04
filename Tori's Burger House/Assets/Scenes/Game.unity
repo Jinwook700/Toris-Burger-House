@@ -1581,6 +1581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmName: GameBgm
   replay: 1
+  setVol: 1
 --- !u!4 &623643725
 Transform:
   m_ObjectHideFlags: 0

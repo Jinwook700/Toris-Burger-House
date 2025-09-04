@@ -1871,6 +1871,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmName: TitleBgm
+  replay: 1
+  setVol: 1
 --- !u!4 &1394072221
 Transform:
   m_ObjectHideFlags: 0
