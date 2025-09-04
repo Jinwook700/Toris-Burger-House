@@ -54,6 +54,7 @@ public class PlateController : MonoBehaviour
         {
             Debug.Log("정답! 메뉴와 일치합니다");
             Debug.Log($"획득 점수: {score}");
+            GoldManager.Instance.AddGold(score);
 
             // 맞춘 메뉴 삭제
             if (matchedMenu != null)
