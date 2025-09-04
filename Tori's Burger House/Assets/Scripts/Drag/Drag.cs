@@ -108,7 +108,7 @@ public class Drag : MonoBehaviour
 
     IEnumerator ChangeAfterDelay(float delay)
     {
-        if (soundName == null)
+        if (soundName != null)
         {
             SoundObject _soundObject;
             _soundObject = Sound.Play(soundName, false);
