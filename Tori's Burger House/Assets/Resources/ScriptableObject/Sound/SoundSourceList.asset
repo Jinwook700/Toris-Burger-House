@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: SoundSourceList
   m_EditorClassIdentifier: 
   soundSources:
-  - name: MainBgm
+  - name: GameBgm
     type: 1
     clip: {fileID: 8300000, guid: d7eaf32d6e7ab984cb237a79d44b0b42, type: 3}
+  - name: TitleBgm
+    type: 1
+    clip: {fileID: 8300000, guid: 70ddff8f3d41cce4694a358d6bd6aad9, type: 3}
