@@ -1256,6 +1256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Main
+  soundName: UiButton
 --- !u!114 &1620377550
 MonoBehaviour:
   m_ObjectHideFlags: 0

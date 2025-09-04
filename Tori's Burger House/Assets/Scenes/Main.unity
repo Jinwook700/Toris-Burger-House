@@ -584,6 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1506463552}
+  soundName: UiButton
 --- !u!1 &275427114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1506463552}
+  soundName: UiButton
 --- !u!114 &1179023437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,6 +2080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 417844604}
+  soundName: UiButton
 --- !u!114 &1437913391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,6 +2400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 417844604}
+  soundName: UiButton
 --- !u!1 &1686098679
 GameObject:
   m_ObjectHideFlags: 0
