@@ -31,7 +31,7 @@ public class Tori : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        SetState(CharacterState.Normal, "햄버거를 만들어보자냥");
+        SetState(CharacterState.Normal, "햄버거를\n만들어보자냥");
     }
     public void SetState(CharacterState newState, string textMessage)
     {

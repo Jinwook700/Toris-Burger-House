@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 4d434073284c6d14ab55987ad5bb75a5, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 1
 --- !u!58 &121403384
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1029,12 +1030,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aaebc1277962ba4e9715a2763589cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 1522997118}
+  - {fileID: 1193235289}
+  - {fileID: 1636823902}
+  - {fileID: 851816075}
   otherFridgeSpriteRenderer: {fileID: 552944650}
   openedSprite: {fileID: 21300000, guid: 67936e42432ee854fae7a0706d873966, type: 3}
   originalSprite: {fileID: 21300000, guid: 6c9e3533b8b512842a2016e6ff87c1e0, type: 3}
   rightMove: 2.5
   spendMoney: 100
-  time: 2
+  time: 3
 --- !u!61 &466502978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1725,6 +1731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 9fa5538ee449dd945a3e059615ba81ba, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 1
 --- !u!61 &842709823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1848,6 +1855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 3fdf346e21178d24fb74b453053664e0, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 0
 --- !u!58 &851816077
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2130,6 +2138,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!58 &941646385
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246350803}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00004029274, y: 0.000026226044}
+  serializedVersion: 2
+  m_Radius: 0.99999994
 --- !u!1001 &962522565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2572,6 +2615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 944220d9f33ac0f4994dde9d2f946e11, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 0
 --- !u!58 &1193235291
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2781,13 +2825,13 @@ PrefabInstance:
       addedObject: {fileID: 1246350807}
     - targetCorrespondingSourceObject: {fileID: 3796665128869986696, guid: 07765ac0c9f935445b31eb51bb5e9292, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1246350809}
+      addedObject: {fileID: 1246350812}
     - targetCorrespondingSourceObject: {fileID: 6631546994165086292, guid: 07765ac0c9f935445b31eb51bb5e9292, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1246350806}
     - targetCorrespondingSourceObject: {fileID: 6631546994165086292, guid: 07765ac0c9f935445b31eb51bb5e9292, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1246350808}
+      addedObject: {fileID: 941646385}
     - targetCorrespondingSourceObject: {fileID: 521814248518069416, guid: 07765ac0c9f935445b31eb51bb5e9292, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1246350805}
@@ -2854,42 +2898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisIngredientTypes: 0c0000000d00000001000000050000000e0000000f00000007000000090000000b000000
---- !u!58 &1246350808
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246350803}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00004029274, y: 0.000026226044}
-  serializedVersion: 2
-  m_Radius: 0.99999994
---- !u!58 &1246350809
+--- !u!58 &1246350812
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3402,6 +3411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: ae9947450078e0640b526bb88c5e4b11, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 0
 --- !u!58 &1522997120
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3537,6 +3547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: a282f5ed9bd45794f804974dcbd27dad, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 0
 --- !u!58 &1636823904
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3707,6 +3718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 1ff79efe33b08774fae1c4773f57baa0, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 1
 --- !u!58 &1653796421
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4285,6 +4297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 8f2bd7d4d6ef73746905ce2ac9b4e72a, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 1
 --- !u!58 &1911439790
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4676,6 +4689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 378900081648149135, guid: 9a617aef5ccf2ef4ebe5f3dfb21c279c, type: 3}
   currentIngredient: {fileID: 0}
+  canDrag: 1
 --- !u!58 &1994560998
 CircleCollider2D:
   m_ObjectHideFlags: 0

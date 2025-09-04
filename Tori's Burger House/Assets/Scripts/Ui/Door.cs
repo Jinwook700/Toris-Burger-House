@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField]
+    public List<GameObject> ingredients = new List<GameObject>();
+
     private bool isOpened = false;
 
     private Vector3 originalPosition;
@@ -19,6 +22,7 @@ public class Door : MonoBehaviour
     public int spendMoney;
 
     public float time;
+
 
     void Start()
     {
@@ -53,6 +57,8 @@ public class Door : MonoBehaviour
 
         isOpened = true;
 
+        SetIngredientsDraggable(true);
+
         StartCoroutine(DecreaseGoldOverTime());
     }
 
@@ -67,6 +73,8 @@ public class Door : MonoBehaviour
 
         isOpened = false;
 
+        SetIngredientsDraggable(false);
+
         StopAllCoroutines();
     }
 
@@ -78,6 +86,21 @@ public class Door : MonoBehaviour
             if (GoldManager.Instance != null && isOpened)
             {
                 GoldManager.Instance.AddGold(-spendMoney);
+            }
+        }
+    }
+
+    private void SetIngredientsDraggable(bool canDrag)
+    {
+        foreach (GameObject ingredient in ingredients)
+        {
+            if (ingredient != null)
+            {
+                Ingredient ing = ingredient.GetComponent<Ingredient>();
+                if (ing != null)
+                {
+                    ing.canDrag = canDrag;
+                }
             }
         }
     }

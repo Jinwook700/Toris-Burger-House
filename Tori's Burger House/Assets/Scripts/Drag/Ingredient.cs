@@ -9,9 +9,11 @@ public class Ingredient : MonoBehaviour
 
     public GameObject currentIngredient;
 
+    public bool canDrag = true;
+
     private void OnMouseDown()
     {
-        if (ingredientPrefab != null)
+        if (ingredientPrefab != null && canDrag)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentIngredient = Instantiate(ingredientPrefab, mousePos, Quaternion.identity);
@@ -29,7 +31,7 @@ public class Ingredient : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (currentIngredient != null)
+        if (currentIngredient != null && canDrag)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentIngredient.transform.position = (Vector2)mousePos
@@ -39,7 +41,7 @@ public class Ingredient : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (currentIngredient != null)
+        if (currentIngredient != null && canDrag)
         {
             Drag drag = currentIngredient.GetComponent<Drag>();
             if (drag != null)
