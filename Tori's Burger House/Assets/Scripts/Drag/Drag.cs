@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Sound;
 using UnityEngine;
 using static IngredientData;
 
@@ -54,6 +55,10 @@ public class Drag : MonoBehaviour
         {
             isDragging = true;
             isDragged = false;
+
+            SoundObject _soundObject;
+            _soundObject = Sound.Play("DragStart", false);
+            _soundObject.SetVolume(1.3f);
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             offset = (Vector2)transform.position - mousePos;

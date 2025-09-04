@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Sound;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
@@ -23,6 +24,10 @@ public class Ingredient : MonoBehaviour
             {
                 drag.isDragging = true;
                 drag.isDragged = false;
+
+                SoundObject _soundObject;
+                _soundObject = Sound.Play("DragStart", false);
+                _soundObject.SetVolume(1.3f);
 
                 drag.offset = (Vector2)currentIngredient.transform.position - mousePos;
             }
