@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Sound;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -48,6 +49,10 @@ public class Door : MonoBehaviour
 
     private void OpenDoor()
     {
+        SoundObject _soundObject;
+        _soundObject = Sound.Play("DoorSound", false);
+        _soundObject.SetVolume(1.3f);
+
         transform.position = originalPosition + new Vector3(rightMove, 0, 0);
 
         if (otherFridgeSpriteRenderer != null && openedSprite != null)
@@ -64,6 +69,10 @@ public class Door : MonoBehaviour
 
     private void CloseDoor()
     {
+        SoundObject _soundObject;
+        _soundObject = Sound.Play("DoorSound", false);
+        _soundObject.SetVolume(1.3f);
+
         transform.position = originalPosition;
 
         if (otherFridgeSpriteRenderer != null && originalSprite != null)
