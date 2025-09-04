@@ -10,12 +10,38 @@ public class CupZone : MonoBehaviour
     [Header("받을 수 있는 IngredientType (기본적으로 Cup)")]
     [SerializeField] public List<IngredientType> thisIngredientTypes;
 
+    [Header("Zone 위를 검사할 반경 (작게 설정)")]
+    [SerializeField] private float checkRadius = 0.2f;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         Drag item = other.GetComponent<Drag>();
 
         if (item != null && !item.isDragging && !item.isDragged)
         {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+
+            bool hasCup = false;
+            foreach (var hit in hits)
+            {
+                if (hit == other) continue;
+
+                Drag existing = hit.GetComponent<Drag>();
+                if (existing != null)
+                {
+                    foreach (IngredientType acceptedType in thisIngredientTypes)
+                    {
+                        if (existing.IngredientType == acceptedType)
+                        {
+                            hasCup = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (hasCup) return;
+
             foreach (IngredientType acceptedType in thisIngredientTypes)
             {
                 if (item.IngredientType == acceptedType)
@@ -23,7 +49,6 @@ public class CupZone : MonoBehaviour
                     item.transform.position = transform.position;
                     item.isDragged = true;
 
-                    // 교체 프리팹 설정
                     if (drinkPrefab != null)
                     {
                         item.SetChangePrefab(drinkPrefab);
@@ -31,5 +56,11 @@ public class CupZone : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, checkRadius);
     }
 }
