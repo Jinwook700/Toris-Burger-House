@@ -2628,6 +2628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Game
+  soundName: GameStart
 --- !u!114 &1938761831
 MonoBehaviour:
   m_ObjectHideFlags: 0
