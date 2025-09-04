@@ -76,6 +76,10 @@ public class PlateController : MonoBehaviour
             ClearPlate();
             isSubmitted = false;
         }
+
+        burgerBowl.GetComponent<Bowl>().ResetBowl();
+        potatoBowl.GetComponent<Bowl>().ResetBowl();
+        juiceBowl.GetComponent<Bowl>().ResetBowl();
     }
 
 
