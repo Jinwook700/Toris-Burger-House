@@ -5425,6 +5425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChatArea
       objectReference: {fileID: 0}
+    - target: {fileID: 7265891040394776111, guid: d8c41b93bc5b5f04db828e4042205c12, type: 3}
+      propertyPath: m_Name
+      value: ChatAreaText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
