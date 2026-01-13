@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.Sound;
 using UnityEngine;
 
+/// <summary>
+/// 냉장고 문을 여는 Door Class
+/// </summary>
 public class Door : MonoBehaviour
 {
-    [SerializeField]
     public List<GameObject> ingredients = new List<GameObject>();
 
-    private bool isOpened = false;
-
-    private Vector3 originalPosition;
-
+    [Header("Sprite")]
     public SpriteRenderer otherFridgeSpriteRenderer;
-
     public Sprite openedSprite;
-
     public Sprite originalSprite;
 
+    [Space(30)]
+    private Vector3 originalPosition;
     public float rightMove;
+    private bool isOpened = false;
 
     public int spendMoney;
-
     public float time;
 
 
@@ -66,6 +65,7 @@ public class Door : MonoBehaviour
 
         StartCoroutine(DecreaseGoldOverTime());
     }
+    
 
     private void CloseDoor()
     {
@@ -99,6 +99,10 @@ public class Door : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 냉장고가 닫혀있을 시 재료 Drag 불가능하게 해줌
+    /// </summary>
+    /// <param name="canDrag"></param>
     private void SetIngredientsDraggable(bool canDrag)
     {
         foreach (GameObject ingredient in ingredients)
