@@ -5,11 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Panel On/Off Script
+/// </summary>
 public class SetActiveSystem : MonoBehaviour
 {
-    [SerializeField]
-    GameObject panel;
+    public GameObject panel;
     public string soundName;
+
     void Start()
     {
         if (panel != null)
