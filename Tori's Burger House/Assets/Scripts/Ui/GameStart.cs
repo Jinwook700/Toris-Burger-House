@@ -6,10 +6,12 @@ using UnityEngine;
 using System.Sound;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// GameScene으로 이동합니다.
+/// </summary>
 public class GameStart : MonoBehaviour
 {
-    [SerializeField]
-    string sceneName;
+    public string sceneName;
     public string soundName;
     public void OnButtonClick()
     {
