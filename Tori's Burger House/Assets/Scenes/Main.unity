@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2102892}
   - component: {fileID: 2102891}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CloseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 12246725}
   - component: {fileID: 12246724}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CloseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 275427117}
   - component: {fileID: 275427116}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ToriText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 337914246}
   - component: {fileID: 337914245}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MethodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 429975914}
   - component: {fileID: 429975913}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 528824184}
   - component: {fileID: 528824183}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: OptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 965284718}
   - component: {fileID: 965284717}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,7 +1902,7 @@ GameObject:
   - component: {fileID: 1434359347}
   - component: {fileID: 1434359346}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: Text4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 1686098682}
   - component: {fileID: 1686098681}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GameStartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2982,7 +2982,7 @@ GameObject:
   - component: {fileID: 2127164715}
   - component: {fileID: 2127164714}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
