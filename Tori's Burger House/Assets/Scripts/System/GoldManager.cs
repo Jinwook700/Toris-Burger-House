@@ -42,8 +42,8 @@ public class GoldManager : MonoBehaviour
 
         if (gold <= 0)
         {
+            gold = 0;
             SceneManager.LoadScene("Finish");
-            GameManager.Instance.totalGold = 0;
         }
     }
     private void UpdateGoldUI()
