@@ -13,14 +13,6 @@ public class SetActiveSystem : MonoBehaviour
     public GameObject panel;
     public string soundName;
 
-    void Start()
-    {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-        }
-    }
-
     public void OnButtonClick()
     {
         if (panel != null)
