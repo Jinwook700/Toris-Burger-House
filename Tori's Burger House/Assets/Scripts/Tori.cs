@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Tori : MonoBehaviour
@@ -7,7 +8,7 @@ public class Tori : MonoBehaviour
     public static Tori Instance { get; private set; }
 
     private Animator animator;
-
+    [SerializeField] private TextMeshPro toriStateText;
     public bool isNormal = true;
     public bool isHappy = false;
     public bool isAngry = false;
@@ -38,10 +39,7 @@ public class Tori : MonoBehaviour
         if (animator != null)
         {
             animator.SetFloat("state", (int)newState);
-            if (TextManager.Instance != null)
-            {
-                TextManager.Instance.SetText(textMessage);
-            }
+            toriStateText.text = textMessage;
         }
     }
 }
