@@ -18,9 +18,9 @@ public class ResultUI : MonoBehaviour
 
     private void Start()
     {
-        if (resultGoldText != null && GameManager.Instance != null)
+        if (resultGoldText != null && GoldManager.Instance != null)
         {
-            int finalGold = GameManager.Instance.totalGold;
+            int finalGold = GoldManager.Instance.gold;
 
             resultGoldText.text = finalGold.ToString() + "¿ø";
 
