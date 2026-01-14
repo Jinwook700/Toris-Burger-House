@@ -4,18 +4,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 게임 플레이타임 관리 매니저
+/// </summary>
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance { get; private set; }
 
-    [SerializeField]
-    private TextMeshProUGUI timeText;
-
-    public float time = 0f;
-    public float setTime = 180f;
+    [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private float time = 0f;
+    private float setTime = 180f;
     private bool isTimerRunning = false;
-
-    public float clearGold;
 
     private void Awake()
     {
@@ -52,9 +51,7 @@ public class TimeManager : MonoBehaviour
                 isTimerRunning = false;
                 UpdateUIText();
 
-                int currentGold = GoldManager.Instance.gold;
                 SceneManager.LoadScene("Finish");
-                GameManager.Instance.totalGold = currentGold;
             }
         }
     }
