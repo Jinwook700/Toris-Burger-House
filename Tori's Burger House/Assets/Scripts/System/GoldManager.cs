@@ -5,15 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// 총 수입금 관리 매니저
+/// </summary>
 public class GoldManager : MonoBehaviour
 {
     public static GoldManager Instance { get; private set; }
 
-    [SerializeField]
-    public TextMeshProUGUI goldText;
-
+    [SerializeField] private TextMeshProUGUI goldText;
     public int gold;
-    public int firstGold;
+    public int startGold;
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class GoldManager : MonoBehaviour
 
     private void Start()
     {
-        gold = firstGold;
+        gold = startGold;
         UpdateGoldUI();
     }
 
@@ -39,7 +40,6 @@ public class GoldManager : MonoBehaviour
         gold += amount;
         UpdateGoldUI();
 
-        int currentGold = GoldManager.Instance.gold;
         if (gold <= 0)
         {
             SceneManager.LoadScene("Finish");
