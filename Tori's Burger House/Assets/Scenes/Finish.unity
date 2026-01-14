@@ -560,7 +560,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb21cb17f2c1a8548835a38635199792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resultText: {fileID: 1127903081}
   resultGoldText: {fileID: 1433131117}
+  toriText: {fileID: 563256252}
+  toriRenderer: {fileID: 1599681183}
+  spriteList:
+  - {fileID: 21300000, guid: e19391ce00cda234baea83445136fa89, type: 3}
+  - {fileID: 21300000, guid: 7c4e7ab75e143f04c9c7b10ac5fe3330, type: 3}
 --- !u!1 &796096983
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,8 +42,8 @@ public class GoldManager : MonoBehaviour
         int currentGold = GoldManager.Instance.gold;
         if (gold <= 0)
         {
-            SceneManager.LoadScene("NotFinish");
-            GameManager.Instance.totalGold = currentGold;
+            SceneManager.LoadScene("Finish");
+            GameManager.Instance.totalGold = 0;
         }
     }
     private void UpdateGoldUI()

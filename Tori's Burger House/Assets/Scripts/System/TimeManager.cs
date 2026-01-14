@@ -53,16 +53,8 @@ public class TimeManager : MonoBehaviour
                 UpdateUIText();
 
                 int currentGold = GoldManager.Instance.gold;
-                if (currentGold >= clearGold)
-                {
-                    SceneManager.LoadScene("Finish");
-                    GameManager.Instance.totalGold = currentGold;
-                }
-                else
-                {
-                    SceneManager.LoadScene("NotFinish");
-                    GameManager.Instance.totalGold = currentGold;
-                }
+                SceneManager.LoadScene("Finish");
+                GameManager.Instance.totalGold = currentGold;
             }
         }
     }
