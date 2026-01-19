@@ -163,8 +163,9 @@ MonoBehaviour:
   m_text: "1. Tori \uAC8C\uC784 DragZone\uAE4C\uC9C0 \uB9AC\uD329\uD1A0\uB9C1\n2.
     \uBE14\uB85C\uADF8\uAE00 5\uAC1C \uC801\uAE30\n3. Solved \uB9C8\uB77C\uD1A4 \uD55C\uBB38\uC81C
     \uD574\uACB0\n4. \uBD84\uD560\uC815\uBCF5 \uB450\uBB38\uC81C \uD480\uAE30\n5.
-    20\uC2DC \uC778\uB514\uAC8C\uC784 \uAC1C\uBC1C \uBA74\uC811\uD558\uAE30\n6. 21\uC2DC
-    \uACC4\uBABD\uD300 \uD68C\uC758\uD558\uAE30"
+    \uC544\uBE60\uD55C\uD14C \uC800\uAC70 \uC0AC\uB294\uAC70 \uB9DE\uB294\uC9C0 \uBB3C\uC5B4\uBCF4\uAE30\n6.
+    \uB9DE\uC73C\uBA74 \uCFE0\uD321 \uC2DC\uD0A4\uAE30\n7. \uC2B9\uD604\uC774\uD55C\uD14C
+    \uACE0\uB9D9\uB2E4\uACE0 \uCE74\uD1A1\uD558\uAE30\n8. \uC6B4\uB3D9\uAC00\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7e69155c39bcd94c91691fa19398e09, type: 2}
   m_sharedMaterial: {fileID: -8630052334053395122, guid: f7e69155c39bcd94c91691fa19398e09, type: 2}
@@ -294,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.62, y: 0.73}
-  m_SizeDelta: {x: 5, y: 1}
+  m_AnchoredPosition: {x: -0.4432, y: 0.73}
+  m_SizeDelta: {x: 5.3535, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &622945428
 GameObject:
