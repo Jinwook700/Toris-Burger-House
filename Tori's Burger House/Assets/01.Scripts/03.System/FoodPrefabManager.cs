@@ -5,8 +5,9 @@ using static IngredientData;
 
 public class FoodPrefabManager : MonoBehaviour
 {
-    public static FoodPrefabManager Instance { get; private set; }
+    /*public static FoodPrefabManager Instance { get; private set; }
 
+    [Header("Foold Prefab Setting")]
     [SerializeField] private List<GameObject> prefabs;
 
     private Dictionary<IngredientType, GameObject> prefabDict;
@@ -28,10 +29,10 @@ public class FoodPrefabManager : MonoBehaviour
         {
             prefabDict[(IngredientType)i] = prefabs[i];
         }
-    }
+    }*/
 
-    public GameObject GetPrefab(IngredientType type)
+    /*public GameObject GetPrefab(IngredientType type)
     {
         return prefabDict[type];
-    }
+    }*/
 }

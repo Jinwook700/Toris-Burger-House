@@ -20,7 +20,7 @@ public class ResultUI : MonoBehaviour
     {
         if (resultGoldText != null && GoldManager.Instance != null)
         {
-            int finalGold = GoldManager.Instance.gold;
+            int finalGold = GoldManager.Instance.Gold;
 
             resultGoldText.text = finalGold.ToString() + "¿ø";
 

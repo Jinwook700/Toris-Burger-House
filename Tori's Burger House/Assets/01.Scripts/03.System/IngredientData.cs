@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 재료 프리팹을 관리하는 스크립터블 오브젝트
+/// </summary>
 [CreateAssetMenu(fileName = "IngredientData", menuName = "Scriptable Objects/Ingredient Data")]
 public class IngredientData : ScriptableObject
-{
+{ 
+    [Header("Ingredients")]
+    public List<GameObject> ingredientPrefabs;
+
     public enum IngredientType
     {
         BunCircle = 0,
@@ -27,7 +33,4 @@ public class IngredientData : ScriptableObject
         PotatoCircle2 = 17,
         PotatoCircle3 = 18,
     }
-
-    [Header("Ingredients")]
-    public List<GameObject> ingredientPrefabs;
 }

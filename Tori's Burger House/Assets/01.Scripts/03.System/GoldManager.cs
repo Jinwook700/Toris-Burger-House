@@ -12,9 +12,13 @@ public class GoldManager : MonoBehaviour
 {
     public static GoldManager Instance { get; private set; }
 
+    [Header("Gold Manager Setting")]
     [SerializeField] private TextMeshProUGUI goldText;
-    public int gold;
-    public int startGold;
+    [SerializeField] private int gold;
+    [SerializeField] private int startGold;
+
+    //프로퍼티
+    public int Gold => gold;
 
     private void Awake()
     {
@@ -35,6 +39,9 @@ public class GoldManager : MonoBehaviour
         UpdateGoldUI();
     }
 
+    /// <summary>
+    /// 골드 수량 더하기
+    /// </summary>
     public void AddGold(int amount)
     {
         gold += amount;
@@ -43,9 +50,13 @@ public class GoldManager : MonoBehaviour
         if (gold <= 0)
         {
             gold = 0;
-            SceneManager.LoadScene("Finish");
+            SceneManager.LoadScene("02.Finish");
         }
     }
+
+    /// <summary>
+    /// 골드 Text 최신화
+    /// </summary>
     private void UpdateGoldUI()
     {
         if (goldText != null)

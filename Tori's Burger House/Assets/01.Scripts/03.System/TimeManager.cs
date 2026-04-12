@@ -11,8 +11,11 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance { get; private set; }
 
+    [Header("Time Manager Setting")]
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private float time = 0f;
+
+    //º¯¼ö
     private float setTime = 180f;
     private bool isTimerRunning = false;
 
@@ -51,7 +54,7 @@ public class TimeManager : MonoBehaviour
                 isTimerRunning = false;
                 UpdateUIText();
 
-                SceneManager.LoadScene("Finish");
+                SceneManager.LoadScene("02.Finish");
             }
         }
     }
