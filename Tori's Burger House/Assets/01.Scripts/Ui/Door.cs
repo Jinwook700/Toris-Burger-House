@@ -10,18 +10,21 @@ public class Door : MonoBehaviour
 {
     public List<GameObject> ingredients = new List<GameObject>();
 
-    [Header("Sprite")]
-    public SpriteRenderer otherFridgeSpriteRenderer;
-    public Sprite openedSprite;
-    public Sprite originalSprite;
+    [Header("Sprite Setting")]
+    [SerializeField] private SpriteRenderer otherFridgeSpriteRenderer;
+    [SerializeField] private Sprite openedSprite;
+    [SerializeField] private Sprite originalSprite;
 
-    [Space(30)]
-    private Vector3 originalPosition;
-    public float rightMove;
+    [Header("Value Setting")]
+    [SerializeField] private float rightMove;
+    [SerializeField] private int spendMoney;
+    [SerializeField] private float time;
+
+    //상태 변수
     private bool isOpened = false;
 
-    public int spendMoney;
-    public float time;
+    //수치 & 로직 제어
+    private Vector3 originalPosition;
 
 
     void Start()
@@ -34,7 +37,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         if (!isOpened)
         {
@@ -46,6 +49,9 @@ public class Door : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 냉장고 문 열기
+    /// </summary>
     private void OpenDoor()
     {
         SoundObject _soundObject;
@@ -66,7 +72,9 @@ public class Door : MonoBehaviour
         StartCoroutine(DecreaseGoldOverTime());
     }
     
-
+    /// <summary>
+    /// 냉장고 문 닫기
+    /// </summary>
     private void CloseDoor()
     {
         SoundObject _soundObject;
@@ -87,6 +95,9 @@ public class Door : MonoBehaviour
         StopAllCoroutines();
     }
 
+    /// <summary>
+    /// 문열어놓으면 돈 빠져나감
+    /// </summary>
     private IEnumerator DecreaseGoldOverTime()
     {
         while (isOpened)

@@ -11,8 +11,9 @@ using UnityEngine.UIElements;
 /// </summary>
 public class GameStart : MonoBehaviour
 {
-    public string sceneName;
-    public string soundName;
+    [Header("Button Setting")]
+    [SerializeField] private string sceneName;
+    [SerializeField] private string soundName;
     public void OnButtonClick()
     {
         if (soundName != null)

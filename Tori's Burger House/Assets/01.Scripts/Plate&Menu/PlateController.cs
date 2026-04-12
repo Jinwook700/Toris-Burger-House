@@ -126,14 +126,14 @@ public class PlateController : MonoBehaviour
         }
         if (!hasDrinkMenu)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
+            Tori.Instance.SetState(CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
         List<int> burger = burgerBowl.GetIngredients();
         if (burger.Count < 5)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
+            Tori.Instance.SetState(CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
@@ -141,7 +141,7 @@ public class PlateController : MonoBehaviour
         int bunEnd = burger[burger.Count - 1];
         if (!IsBun(bunStart) || !IsBun(bunEnd))
         {
-            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
+            Tori.Instance.SetState(CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
@@ -187,7 +187,7 @@ public class PlateController : MonoBehaviour
 
         if (!match)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Angry, "이런 메뉴는 없다냥!");
+            Tori.Instance.SetState(CharacterState.Angry, "이런 메뉴는 없다냥!");
             return 0;
         }
 
@@ -229,35 +229,35 @@ public class PlateController : MonoBehaviour
 
         if (score == 1000)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Happy, "맛있겠다냥~!");
+            Tori.Instance.SetState(CharacterState.Happy, "맛있겠다냥~!");
         }
         else if (potatoMissing && burntCount == 0)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Angry, "감자를 무시하냥!");
+            Tori.Instance.SetState(CharacterState.Angry, "감자를 무시하냥!");
         }
         else if (potatoBurnt && burntCount == 0)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Normal, "감자에서 탄맛난다냥..");
+            Tori.Instance.SetState(CharacterState.Normal, "감자에서 탄맛난다냥..");
         }
         else if (!potatoBurnt && !potatoMissing && burntCount == 1)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Normal, "잘먹겠다냥!");
+            Tori.Instance.SetState(CharacterState.Normal, "잘먹겠다냥!");
         }
         else if (!potatoBurnt && !potatoMissing && burntCount == 2)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Normal, "먹을만하다냥");
+            Tori.Instance.SetState(CharacterState.Normal, "먹을만하다냥");
         }
         else if (!potatoBurnt && !potatoMissing && burntCount >= 3)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Angry, "넌 요리하지마라냥");
+            Tori.Instance.SetState(CharacterState.Angry, "넌 요리하지마라냥");
         }
         else if (potatoBurnt && burntCount >= 1)
         {
-            Tori.Instance.SetState(Tori.CharacterState.Normal, "넌 요리하지 말라냥..");
+            Tori.Instance.SetState(CharacterState.Normal, "넌 요리하지 말라냥..");
         }
         else
         {
-            Tori.Instance.SetState(Tori.CharacterState.Normal, "고생햇다냥.");
+            Tori.Instance.SetState(CharacterState.Normal, "고생햇다냥.");
         }
 
         return Mathf.Max(score, 0);

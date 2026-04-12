@@ -10,8 +10,9 @@ using UnityEngine.UI;
 /// </summary>
 public class SetActiveSystem : MonoBehaviour
 {
-    public GameObject panel;
-    public string soundName;
+    [Header("패널 설정")]
+    [SerializeField] private GameObject panel;
+    [SerializeField] private string soundName;
 
     public void OnButtonClick()
     {
