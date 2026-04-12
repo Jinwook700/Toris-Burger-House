@@ -3,28 +3,32 @@ using System.Sound;
 using UnityEngine;
 using static IngredientData;
 
+/// <summary>
+/// 드래그 할 수 있는 재료들의 최상단 스크립트
+/// </summary>
 public class Drag : MonoBehaviour
 {
-    public IngredientType IngredientType;
+    [Header("Setting")]
+    [SerializeField] private IngredientType IngredientType;
+    [SerializeField] private string soundName;
+    [SerializeField] private GameObject changePrefab;
+    [SerializeField] protected Sprite normalSprite;
+    [SerializeField] protected Sprite changedSprite;
 
-    public Vector2 offset;
-    public bool isDragging;
-    public bool isDragged;
-    public bool canDrag;
-    public bool isChange = false;
-    public bool firstDrag = false;
-
-    public string soundName;
-
+    //내부 컴포넌트
     protected SpriteRenderer spriteRenderer;
+
+    //상태 제어
+    private bool firstDrag = false;
+    private bool canDrag;
+    private bool isDragged;
+    private bool isDragging;
+    private bool isChange = false;
     private bool spriteChanged = false;
 
-    public float delayTime = 2f;
-
-    [SerializeField] private GameObject changePrefab;
-
-    [SerializeField] protected Sprite normalSprite;
-    [SerializeField] private Sprite changedSprite;
+    //수치 & 로직 제어
+    private Vector2 offset;
+    private float delayTime = 2f;
 
     private void Start()
     {
