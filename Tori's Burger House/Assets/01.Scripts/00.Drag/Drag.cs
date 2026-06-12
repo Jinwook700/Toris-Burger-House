@@ -9,7 +9,7 @@ using static IngredientData;
 public class Drag : MonoBehaviour
 {
     [Header("Setting")]
-    [SerializeField] private IngredientType IngredientType;
+    [SerializeField] public IngredientType IngredientType;
     [SerializeField] private string soundName;
     [SerializeField] private GameObject changePrefab;
     [SerializeField] protected Sprite normalSprite;
@@ -19,15 +19,15 @@ public class Drag : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
 
     //상태 제어
-    private bool firstDrag = false;
-    private bool canDrag;
-    private bool isDragged;
-    private bool isDragging;
+    public bool firstDrag = false;
+    public bool canDrag;
+    public bool isDragged;
+    public bool isDragging;
     private bool isChange = false;
     private bool spriteChanged = false;
 
     //수치 & 로직 제어
-    private Vector2 offset;
+    public Vector2 offset;
     private float delayTime = 2f;
 
     private void Start()
