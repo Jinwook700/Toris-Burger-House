@@ -928,9 +928,6 @@ Transform:
   - {fileID: 1909319675}
   - {fileID: 1740949022}
   - {fileID: 1445084799}
-  - {fileID: 626192814}
-  - {fileID: 1206069548}
-  - {fileID: 866660853}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &466502974
@@ -1598,53 +1595,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &626192813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 626192814}
-  - component: {fileID: 626192815}
-  m_Layer: 0
-  m_Name: GoldManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &626192814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626192813}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 398727438}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &626192815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626192813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4a71a87ba47584083bd60335ba0807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldText: {fileID: 1962572914}
-  gold: 0
-  startGold: 0
 --- !u!1 &813440176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,50 +1910,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 609189661}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &866660851
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 866660853}
-  - component: {fileID: 866660852}
-  m_Layer: 0
-  m_Name: DataManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &866660852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866660851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccdbbf3ad2ae4b4449dc7dc574e1242e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &866660853
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866660851}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 398727438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881882334
 GameObject:
@@ -2696,53 +2602,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 609189661}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1206069546
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1206069548}
-  - component: {fileID: 1206069547}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1206069547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206069546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce08ceb306346f94590d6bcde84b9ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundSourceList: {fileID: 11400000, guid: 8bb70a11354c1cc44ac0cef4f39571ad, type: 2}
-  soundObjects:
-  - {fileID: 6545506346366035029, guid: 83d53c20b0f8d7a4cb5ef09d791b29ef, type: 3}
---- !u!4 &1206069548
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206069546}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 398727438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1246350800
 PrefabInstance:
@@ -3995,19 +3854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7410d089f12ef44b14bcb4e610c075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 378900081648149135, guid: ae9947450078e0640b526bb88c5e4b11, type: 3}
-  - {fileID: 378900081648149135, guid: 3fdf346e21178d24fb74b453053664e0, type: 3}
-  - {fileID: 378900081648149135, guid: b7329551e9940f14596f92bd7ec13c27, type: 3}
-  - {fileID: 378900081648149135, guid: d23df8941e23d3447bc8a35d30c5331c, type: 3}
-  - {fileID: 378900081648149135, guid: 9fa5538ee449dd945a3e059615ba81ba, type: 3}
-  - {fileID: 378900081648149135, guid: 1ff79efe33b08774fae1c4773f57baa0, type: 3}
-  - {fileID: 378900081648149135, guid: 944220d9f33ac0f4994dde9d2f946e11, type: 3}
-  - {fileID: 378900081648149135, guid: 8f2bd7d4d6ef73746905ce2ac9b4e72a, type: 3}
-  - {fileID: 378900081648149135, guid: 34eb705054955ee4cb1e8d0a0703c14c, type: 3}
-  - {fileID: 378900081648149135, guid: 4d434073284c6d14ab55987ad5bb75a5, type: 3}
-  - {fileID: 378900081648149135, guid: a282f5ed9bd45794f804974dcbd27dad, type: 3}
-  - {fileID: 378900081648149135, guid: 9a617aef5ccf2ef4ebe5f3dfb21c279c, type: 3}
 --- !u!224 &1746964914 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1293704505449543578, guid: ae183be66767c5b46856b04c8739faec, type: 3}
