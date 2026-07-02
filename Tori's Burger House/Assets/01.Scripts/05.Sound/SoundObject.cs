@@ -3,19 +3,24 @@ using UnityEngine;
 
 namespace System.Sound
 {
+    /// <summary>
+    /// 사운드 실행 오브젝트 스크립트
+    /// </summary>
     [Serializable]
     public class SoundObject : MonoBehaviour
     {
+        // === External Reference ===
+        [SerializeField] private string sourceName = null;
         private SoundManager _soundManager;
 
-        [SerializeField] private string sourceName = null;
+        // === Internal Components ===
         private SoundType _soundType;
-
         private AudioClip _clip;
         private AudioSource _audioSource;
         private float _volume;
         private float _masterVolume = 1f;
 
+        // === State Control ===
         private bool _isInitialized = false;
         public bool IsPlaying
         {
@@ -61,12 +66,10 @@ namespace System.Sound
 
             _isInitialized = true;
         }
-
-        public void SetLoop(bool isLoop)
-        {
-            _audioSource.loop = isLoop;
-        }
-
+        
+        /// <summary>
+        /// 문자열 이름기반 오브젝트에 Sound 적용
+        /// </summary>
         public void SetSoundSourceByName(string soundSourceName)
         {
             SoundSource soundSource = SoundManager.Instance.SoundSourceList.GetSoundSourceByName(soundSourceName);
@@ -75,18 +78,17 @@ namespace System.Sound
             _clip = soundSource.clip;
         }
 
-        public void SetSoundSource(SoundSource soundSource)
+        /// <summary>
+        /// 루프 적용
+        /// </summary>
+        public void SetLoop(bool isLoop)
         {
-            _soundType = soundSource.type;
-            _volume = SoundManager.Instance.GetVolume(soundSource.type);
-            _clip = soundSource.clip;
+            _audioSource.loop = isLoop;
         }
 
-        public void Stop()
-        {
-            _audioSource.Stop();
-        }
-
+        /// <summary>
+        /// 소리 재생
+        /// </summary>
         public IEnumerator Play()
         {
             yield return new WaitUntil(() => _audioSource != null);
@@ -95,17 +97,26 @@ namespace System.Sound
             _audioSource.Play();
             yield return new WaitWhile(() => _audioSource.isPlaying);
         }
-
-        public void PlayAsync()
+        
+        /// <summary>
+        /// 재생중인 소리 중단
+        /// </summary>
+        public void Stop()
         {
-            StartCoroutine(Play());
+            _audioSource.Stop();
         }
 
+        /// <summary>
+        /// 사운드 타입 반환
+        /// </summary>
         public SoundType GetSoundType()
         {
             return _soundType;
         }
 
+        /// <summary>
+        /// 오브젝트의 타입별 볼륨값 설정
+        /// </summary>
         public void SetVolume(float volume)
         {
             this._volume = volume;
@@ -118,14 +129,6 @@ namespace System.Sound
             UpdateAudioSourceVolume();
         }
 
-        private void UpdateAudioSourceVolume()
-        {
-            if (_audioSource != null)
-            {
-                _audioSource.volume = _volume * _masterVolume;
-            }
-        }
-
         public void PlayWithCallback(ICallback callback)
         {
             StartCoroutine(PlayCoroutine(callback));
@@ -135,6 +138,14 @@ namespace System.Sound
         {
             yield return Play();
             callback?.OnProcessCompleted();
+        }
+        
+        private void UpdateAudioSourceVolume()
+        {
+            if (_audioSource != null)
+            {
+                _audioSource.volume = _volume * _masterVolume;
+            }
         }
     }
 }
