@@ -69,7 +69,7 @@ namespace System.Sound
 
         public void SetSoundSourceByName(string soundSourceName)
         {
-            SoundSource soundSource = SoundManager.Instance.soundSourceList.GetSoundSourceByName(soundSourceName);
+            SoundSource soundSource = SoundManager.Instance.SoundSourceList.GetSoundSourceByName(soundSourceName);
             _soundType = soundSource.type;
             _volume = SoundManager.Instance.GetVolume(soundSource.type);
             _clip = soundSource.clip;

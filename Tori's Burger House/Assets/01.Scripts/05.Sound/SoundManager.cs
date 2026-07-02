@@ -5,18 +5,26 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Sound;
 
+/// <summary>
+/// 게임 전체 사운드 관리 시스템
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    private const float DEFAULT_VOLUME = 1;
-
+    // === External Reference ===
+    [SerializeField] private SoundSourceList soundSourceList;
+    [SerializeField] private List<SoundObject> soundObjects;
     private SoundObject bgmSoundObject;
-
-    public SoundSourceList soundSourceList;
+    
+    // === Internal Components ===
     private Dictionary<SoundType, float> volumes = new Dictionary<SoundType, float>();
-    public List<SoundObject> soundObjects;
-
+    
+    // === Settings & Visuals ===
+    private const float DEFAULT_VOLUME = 1;
+    
+    // === Property ===
+    public SoundSourceList SoundSourceList => soundSourceList;
 
     private void Awake()
     {
@@ -33,36 +41,30 @@ public class SoundManager : MonoBehaviour
 
         InitializeVolumes();
     }
-
-    private void InitializeVolumes()
+    
+    private void OnEnable()
     {
-        foreach (SoundType type in Enum.GetValues(typeof(SoundType)))
-        {
-            volumes[type] = DEFAULT_VOLUME;
-        }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
-    public SoundObject GetBgmObject()
-    {
-        if (bgmSoundObject == null)
-        {
-            bgmSoundObject = gameObject.AddComponent<SoundObject>();
-            bgmSoundObject.enabled = true;
-        }
-
-        return bgmSoundObject;
-    }
-
+    
     private void Start()
     {
         GetSoundObjects();
     }
-
-    private void GetSoundObjects()
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        soundObjects = new List<SoundObject>(FindObjectsOfType<SoundObject>());
+        GetSoundObjects();
     }
 
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    /// <summary>
+    /// 타입별 볼륨 크기 설정
+    /// </summary>
     public void SetVolume(SoundType type, float volume)
     {
         volumes[type] = volume;
@@ -76,6 +78,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 전체 마스터 볼륨 설정
+    /// </summary>
     public void SetMasterVolume(float masterVolume)
     {
         foreach (SoundObject soundObject in soundObjects)
@@ -84,6 +89,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 볼륨 읽어오기
+    /// </summary>
     public float GetVolume(SoundType type)
     {
         try
@@ -95,22 +103,6 @@ public class SoundManager : MonoBehaviour
             InitializeVolumes();
             return volumes[type];
         }
-
-    }
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        GetSoundObjects();
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void StopAllBgm()
@@ -122,5 +114,21 @@ public class SoundManager : MonoBehaviour
                 soundObject.Stop();
             }
         }
+    }
+    
+    /// <summary>
+    /// 최초 실행시 Volume DEFAULT_VOLUME으로 초기화
+    /// </summary>
+    private void InitializeVolumes()
+    {
+        foreach (SoundType type in Enum.GetValues(typeof(SoundType)))
+        {
+            volumes[type] = DEFAULT_VOLUME;
+        }
+    }
+    
+    private void GetSoundObjects()
+    {
+        soundObjects = new List<SoundObject>(FindObjectsOfType<SoundObject>());
     }
 }
