@@ -10,15 +10,25 @@ public struct SoundSource
     public AudioClip clip;
 }
 
+public enum SoundType
+{
+    UI,
+    BGM
+}
+
+/// <summary>
+/// 사운드 파일 저장 Scriptable Object
+/// </summary>
 [CreateAssetMenu(fileName = "SoundSourceList", menuName = "ScriptableObject/New SoundSourceList")]
 public class SoundSourceList : ScriptableObject
 {
-    [SerializeField]
-    private List<SoundSource> soundSources = new List<SoundSource>();
+    [SerializeField] private List<SoundSource> soundSources = new List<SoundSource>();
 
+    /// <summary>
+    /// string에 대응되는 sound source return
+    /// </summary>
     public SoundSource GetSoundSourceByName(string name)
     {
-
         foreach (SoundSource source in soundSources)
         {
             if (source.name.Equals(name))
@@ -26,16 +36,5 @@ public class SoundSourceList : ScriptableObject
         }
 
         throw new Exception("SoundSource is not found");
-    }
-
-    public List<SoundSource> GetSoundSourcesByNameComtains(string subString)
-    {
-        List<SoundSource> result = new List<SoundSource>();
-        foreach (SoundSource source in soundSources)
-        {
-            if (source.name.Contains(subString))
-                result.Add(source);
-        }
-        return result;
     }
 }

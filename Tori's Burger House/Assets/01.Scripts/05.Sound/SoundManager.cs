@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Sound;
 
-public enum SoundType
-{
-    UI,
-    BGM
-}
-
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
