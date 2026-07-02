@@ -7,7 +7,7 @@ using System.Sound;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// GameScene���� �̵��մϴ�.
+/// 게임 시작 버튼 처리
 /// </summary>
 public class GameStart : MonoBehaviour
 {

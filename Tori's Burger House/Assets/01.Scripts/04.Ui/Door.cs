@@ -4,7 +4,7 @@ using System.Sound;
 using UnityEngine;
 
 /// <summary>
-/// ����� ���� ���� Door Class
+/// 냉장고 문 열기와 닫기 관리
 /// </summary>
 public class Door : MonoBehaviour
 {
@@ -20,10 +20,10 @@ public class Door : MonoBehaviour
     [SerializeField] private int spendMoney;
     [SerializeField] private float time;
 
-    //���� ����
+    // 문 열림 상태
     private bool isOpened = false;
 
-    //��ġ & ���� ����
+    // 원래 위치 저장
     private Vector3 originalPosition;
 
 
@@ -50,7 +50,7 @@ public class Door : MonoBehaviour
     }
 
     /// <summary>
-    /// ����� �� ����
+    /// 문 열기
     /// </summary>
     private void OpenDoor()
     {
@@ -73,7 +73,7 @@ public class Door : MonoBehaviour
     }
     
     /// <summary>
-    /// ����� �� �ݱ�
+    /// 문 닫기
     /// </summary>
     private void CloseDoor()
     {
@@ -96,7 +96,7 @@ public class Door : MonoBehaviour
     }
 
     /// <summary>
-    /// ����������� �� ��������
+    /// 문이 열려 있는 동안 골드 감소
     /// </summary>
     private IEnumerator DecreaseGoldOverTime()
     {
@@ -111,9 +111,9 @@ public class Door : MonoBehaviour
     }
 
     /// <summary>
-    /// ������� �������� �� ��� Drag �Ұ����ϰ� ����
+    /// 재료 드래그 가능 여부 설정
     /// </summary>
-    /// <param name="canDrag"></param>
+    /// <param name="canDrag">드래그 가능 여부</param>
     private void SetIngredientsDraggable(bool canDrag)
     {
         foreach (GameObject ingredient in ingredients)

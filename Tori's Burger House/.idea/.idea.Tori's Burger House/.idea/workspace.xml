@@ -11,21 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc91341-4a52-481a-bb32-4d32aa5d8b0a" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tori's Burger House/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tori's Burger House/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/00.Drag/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/00.Drag/Drag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/00.Drag/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/00.Drag/Ingredient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/00.Drag/MiddleCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/00.Drag/MiddleCircle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/01.DragZone/Bowl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/01.DragZone/Bowl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/02.Plate&amp;Menu/PlateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/02.Plate&amp;Menu/PlateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/04.Ui/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/04.Ui/Door.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/04.Ui/GameStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/04.Ui/GameStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/04.Ui/SetActiveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/04.Ui/SetActiveSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/BgmPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/BgmPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/Sound.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundPlayer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundSettingsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundSettingsUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundDataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Sound/SequentialSoundSourceList.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Sound/SequentialSoundSourceList.asset.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782997213155</updated>
       <workItem from="1782997213157" duration="3289000" />
-      <workItem from="1783006666666" duration="6161000" />
+      <workItem from="1783006666666" duration="6510000" />
     </task>
     <servers />
   </component>

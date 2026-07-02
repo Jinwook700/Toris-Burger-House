@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// °ÔÀÓ °á°ú ½Ã UI Ç¥½Ã
+/// ê²Œìž„ ê²°ê³¼ UI í‘œì‹œ
 /// </summary>
 public class ResultUI : MonoBehaviour
 {
@@ -22,18 +22,18 @@ public class ResultUI : MonoBehaviour
         {
             int finalGold = GoldManager.Instance.Gold;
 
-            resultGoldText.text = finalGold.ToString() + "¿ø";
+            resultGoldText.text = finalGold.ToString() + "ï¿½ï¿½";
 
             if (finalGold >= 18000)
             {
-                resultText.text = "°ÔÀÓ Å¬¸®¾î!";
-                toriText.text = "¼º°øÀÌ´Ù³É~!";
+                resultText.text = "ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½!";
+                toriText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½Ì´Ù³ï¿½~!";
                 toriRenderer.sprite = spriteList[0];
             }
             else
             {
-                resultText.text = "°ÔÀÓ ½ÇÆÐ...";
-                toriText.text = "Àå»ç Á¢¾î¶ó³É!!";
+                resultText.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½...";
+                toriText.text = "ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!!";
                 toriRenderer.sprite = spriteList[1];
             }
         }

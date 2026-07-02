@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Panel On/Off Script
+/// 패널 열기와 닫기 처리
 /// </summary>
 public class SetActiveSystem : MonoBehaviour
 {
