@@ -11,8 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc91341-4a52-481a-bb32-4d32aa5d8b0a" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tori's Burger House/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tori's Burger House/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/SoundObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/05.Sound/Sound.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782997213155</updated>
       <workItem from="1782997213157" duration="3289000" />
-      <workItem from="1783006666666" duration="3245000" />
+      <workItem from="1783006666666" duration="3842000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,9 @@ using UnityEngine.Pool;
 
 namespace System.Sound
 {
+    /// <summary>
+    /// SoundObject 관리 시스템
+    /// </summary>
     public class Sound
     {
         private static ObjectPool<SoundObject> _objectPool = null;
@@ -32,6 +35,9 @@ namespace System.Sound
             }
         }
 
+        /// <summary>
+        /// 사운드 재생 함수
+        /// </summary>
         public static SoundObject Play(string soundId, bool loop = false)
         {
             SoundObject soundObject = ObjectPool.Get();
@@ -42,6 +48,9 @@ namespace System.Sound
             return soundObject;
         }
 
+        /// <summary>
+        /// 사운드 중지 함수
+        /// </summary>
         public static void Stop(SoundObject soundObject)
         {
             soundObject?.Stop();
