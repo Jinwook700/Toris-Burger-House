@@ -6,18 +6,16 @@ using UnityEngine;
 /// <summary>
 /// 배경음악 플레이어
 /// </summary>
-public class BgmPlay : MonoBehaviour
+public class BgmPlayer : MonoBehaviour
 {
     [Header("BgmPlay Settings")]
     [SerializeField] private string bgmName;
-    private bool replay = true;
-    private float setVol = 0.1f;
+    [SerializeField ]private bool replay = true;
+    [SerializeField] private float setVol = 0.1f;
     
     private void Start()
     {
         SoundManager.Instance.StopAllBgm();
-        SoundObject _soundObject;
-        _soundObject = Sound.Play(bgmName, replay);
-        _soundObject.SetVolume(setVol);
+        Sound.Play(bgmName, replay, setVol);
     }
 }

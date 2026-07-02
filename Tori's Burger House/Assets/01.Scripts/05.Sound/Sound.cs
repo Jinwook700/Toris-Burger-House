@@ -38,12 +38,13 @@ namespace System.Sound
         /// <summary>
         /// 사운드 재생 함수
         /// </summary>
-        public static SoundObject Play(string soundId, bool loop = false)
+        public static SoundObject Play(string soundId, bool loop = false, float volume = 1f)
         {
             SoundObject soundObject = ObjectPool.Get();
             soundObject.Initialize();
             soundObject.SetSoundSourceByName(soundId);
             soundObject.SetLoop(loop);
+            soundObject.SetVolume(volume);
             soundObject.PlayWithCallback(new SoundPlayCallback(soundObject));
             return soundObject;
         }
