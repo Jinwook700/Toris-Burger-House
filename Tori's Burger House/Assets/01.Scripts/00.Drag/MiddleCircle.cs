@@ -10,7 +10,7 @@ public class MiddleCircle : Drag
     private void Start()
     {
         SoundObject _soundObject;
-        _soundObject = Sound.Play("GoodChangeSound", false);
+        _soundObject = SoundPlayer.Play("GoodChangeSound", false);
         _soundObject.SetVolume(1.3f);
 
         spriteRenderer = GetComponent<SpriteRenderer>();

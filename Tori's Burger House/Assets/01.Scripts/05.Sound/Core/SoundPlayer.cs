@@ -7,7 +7,7 @@ namespace System.Sound
     /// <summary>
     /// SoundObject 관리 시스템
     /// </summary>
-    public class Sound
+    public class SoundPlayer
     {
         private static ObjectPool<SoundObject> _objectPool = null;
         private static ObjectPool<SoundObject> ObjectPool

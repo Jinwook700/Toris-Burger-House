@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -26,6 +27,26 @@ public class SoundDataManager : MonoBehaviour
         LoadData();
     }
 
+    private void Start()
+    {
+        ApplyToSoundManager();
+    }
+    
+    public void ApplyToSoundManager()
+    {
+        if (SoundManager.Instance == null || SoundData == null)
+        {
+            return;
+        }
+
+        SoundManager.Instance.SetMasterVolume(SoundData.masterVolume);
+
+        foreach (SoundVolumeData volumeData in SoundData.typeVolumes)
+        {
+            SoundManager.Instance.SetVolume(volumeData.type, volumeData.volume);
+        }
+    }
+
     public void LoadData()
     {
         if (File.Exists(SavePath))
@@ -46,7 +67,7 @@ public class SoundDataManager : MonoBehaviour
 
         SoundData.EnsureDefaultVolumes();
     }
-
+    
     public void SaveData()
     {
         string directoryPath = Path.GetDirectoryName(SavePath);

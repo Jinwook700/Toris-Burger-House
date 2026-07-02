@@ -16,6 +16,6 @@ public class BgmPlayer : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.StopAllBgm();
-        Sound.Play(bgmName, replay, setVol);
+        SoundPlayer.Play(bgmName, replay, setVol);
     }
 }

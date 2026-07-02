@@ -4,7 +4,7 @@ using System.Sound;
 using UnityEngine;
 
 /// <summary>
-/// ³ÃÀå°í ¹®À» ¿©´Â Door Class
+/// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Door Class
 /// </summary>
 public class Door : MonoBehaviour
 {
@@ -20,10 +20,10 @@ public class Door : MonoBehaviour
     [SerializeField] private int spendMoney;
     [SerializeField] private float time;
 
-    //»óÅÂ º¯¼ö
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private bool isOpened = false;
 
-    //¼öÄ¡ & ·ÎÁ÷ Á¦¾î
+    //ï¿½ï¿½Ä¡ & ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private Vector3 originalPosition;
 
 
@@ -50,12 +50,12 @@ public class Door : MonoBehaviour
     }
 
     /// <summary>
-    /// ³ÃÀå°í ¹® ¿­±â
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private void OpenDoor()
     {
         SoundObject _soundObject;
-        _soundObject = Sound.Play("DoorSound", false);
+        _soundObject = SoundPlayer.Play("DoorSound", false);
         _soundObject.SetVolume(1.3f);
 
         transform.position = originalPosition + new Vector3(rightMove, 0, 0);
@@ -73,12 +73,12 @@ public class Door : MonoBehaviour
     }
     
     /// <summary>
-    /// ³ÃÀå°í ¹® ´Ý±â
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ý±ï¿½
     /// </summary>
     private void CloseDoor()
     {
         SoundObject _soundObject;
-        _soundObject = Sound.Play("DoorSound", false);
+        _soundObject = SoundPlayer.Play("DoorSound", false);
         _soundObject.SetVolume(1.3f);
 
         transform.position = originalPosition;
@@ -96,7 +96,7 @@ public class Door : MonoBehaviour
     }
 
     /// <summary>
-    /// ¹®¿­¾î³õÀ¸¸é µ· ºüÁ®³ª°¨
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private IEnumerator DecreaseGoldOverTime()
     {
@@ -111,7 +111,7 @@ public class Door : MonoBehaviour
     }
 
     /// <summary>
-    /// ³ÃÀå°í°¡ ´ÝÇôÀÖÀ» ½Ã Àç·á Drag ºÒ°¡´ÉÇÏ°Ô ÇØÁÜ
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ Drag ï¿½Ò°ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <param name="canDrag"></param>
     private void SetIngredientsDraggable(bool canDrag)

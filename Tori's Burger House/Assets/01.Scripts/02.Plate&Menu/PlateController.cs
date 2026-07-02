@@ -48,7 +48,7 @@ public class PlateController : MonoBehaviour
         if (matched)
         {
             SoundObject _soundObject;
-            _soundObject = Sound.Play("GoodSubmit", false);
+            _soundObject = SoundPlayer.Play("GoodSubmit", false);
             _soundObject.SetVolume(0.9f);
 
             GoldManager.Instance.AddGold(score);
@@ -68,7 +68,7 @@ public class PlateController : MonoBehaviour
         else
         {
             SoundObject _soundObject;
-            _soundObject = Sound.Play("BadSubmit", false);
+            _soundObject = SoundPlayer.Play("BadSubmit", false);
             _soundObject.SetVolume(0.9f);
 
             ClearPlate();
@@ -126,14 +126,14 @@ public class PlateController : MonoBehaviour
         }
         if (!hasDrinkMenu)
         {
-            Tori.Instance.SetState(CharacterState.Angry, "ÀÌ·± ¸Þ´º´Â ¾ø´Ù³É!");
+            Tori.Instance.SetState(CharacterState.Angry, "ï¿½Ì·ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù³ï¿½!");
             return 0;
         }
 
         List<int> burger = burgerBowl.GetIngredients();
         if (burger.Count < 5)
         {
-            Tori.Instance.SetState(CharacterState.Angry, "ÀÌ·± ¸Þ´º´Â ¾ø´Ù³É!");
+            Tori.Instance.SetState(CharacterState.Angry, "ï¿½Ì·ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù³ï¿½!");
             return 0;
         }
 
@@ -141,7 +141,7 @@ public class PlateController : MonoBehaviour
         int bunEnd = burger[burger.Count - 1];
         if (!IsBun(bunStart) || !IsBun(bunEnd))
         {
-            Tori.Instance.SetState(CharacterState.Angry, "ÀÌ·± ¸Þ´º´Â ¾ø´Ù³É!");
+            Tori.Instance.SetState(CharacterState.Angry, "ï¿½Ì·ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù³ï¿½!");
             return 0;
         }
 
@@ -187,7 +187,7 @@ public class PlateController : MonoBehaviour
 
         if (!match)
         {
-            Tori.Instance.SetState(CharacterState.Angry, "ÀÌ·± ¸Þ´º´Â ¾ø´Ù³É!");
+            Tori.Instance.SetState(CharacterState.Angry, "ï¿½Ì·ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù³ï¿½!");
             return 0;
         }
 
@@ -229,35 +229,35 @@ public class PlateController : MonoBehaviour
 
         if (score == 1000)
         {
-            Tori.Instance.SetState(CharacterState.Happy, "¸ÀÀÖ°Ú´Ù³É~!");
+            Tori.Instance.SetState(CharacterState.Happy, "ï¿½ï¿½ï¿½Ö°Ú´Ù³ï¿½~!");
         }
         else if (potatoMissing && burntCount == 0)
         {
-            Tori.Instance.SetState(CharacterState.Angry, "°¨ÀÚ¸¦ ¹«½ÃÇÏ³É!");
+            Tori.Instance.SetState(CharacterState.Angry, "ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï³ï¿½!");
         }
         else if (potatoBurnt && burntCount == 0)
         {
-            Tori.Instance.SetState(CharacterState.Normal, "°¨ÀÚ¿¡¼­ Åº¸À³­´Ù³É..");
+            Tori.Instance.SetState(CharacterState.Normal, "ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Åºï¿½ï¿½ï¿½ï¿½ï¿½Ù³ï¿½..");
         }
         else if (!potatoBurnt && !potatoMissing && burntCount == 1)
         {
-            Tori.Instance.SetState(CharacterState.Normal, "Àß¸Ô°Ú´Ù³É!");
+            Tori.Instance.SetState(CharacterState.Normal, "ï¿½ß¸Ô°Ú´Ù³ï¿½!");
         }
         else if (!potatoBurnt && !potatoMissing && burntCount == 2)
         {
-            Tori.Instance.SetState(CharacterState.Normal, "¸ÔÀ»¸¸ÇÏ´Ù³É");
+            Tori.Instance.SetState(CharacterState.Normal, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Ù³ï¿½");
         }
         else if (!potatoBurnt && !potatoMissing && burntCount >= 3)
         {
-            Tori.Instance.SetState(CharacterState.Angry, "³Í ¿ä¸®ÇÏÁö¸¶¶ó³É");
+            Tori.Instance.SetState(CharacterState.Angry, "ï¿½ï¿½ ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         else if (potatoBurnt && burntCount >= 1)
         {
-            Tori.Instance.SetState(CharacterState.Normal, "³Í ¿ä¸®ÇÏÁö ¸»¶ó³É..");
+            Tori.Instance.SetState(CharacterState.Normal, "ï¿½ï¿½ ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½..");
         }
         else
         {
-            Tori.Instance.SetState(CharacterState.Normal, "°í»ýÇÞ´Ù³É.");
+            Tori.Instance.SetState(CharacterState.Normal, "ï¿½ï¿½ï¿½ï¿½ï¿½Þ´Ù³ï¿½.");
         }
 
         return Mathf.Max(score, 0);

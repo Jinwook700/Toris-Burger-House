@@ -21,7 +21,7 @@ public class SetActiveSystem : MonoBehaviour
             if (soundName != null)
             {
                 SoundObject _soundObject;
-                _soundObject = Sound.Play(soundName, false);
+                _soundObject = SoundPlayer.Play(soundName, false);
                 _soundObject.SetVolume(1.1f);
             }
             panel.SetActive(!panel.activeSelf);

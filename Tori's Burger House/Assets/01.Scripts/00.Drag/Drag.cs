@@ -62,7 +62,7 @@ public class Drag : MonoBehaviour
             isDragged = false;
 
             SoundObject _soundObject;
-            _soundObject = Sound.Play("DragStart", false);
+            _soundObject = SoundPlayer.Play("DragStart", false);
             _soundObject.SetVolume(1.3f);
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -114,7 +114,7 @@ public class Drag : MonoBehaviour
         if (soundName != null)
         {
             SoundObject _soundObject;
-            _soundObject = Sound.Play(soundName, false);
+            _soundObject = SoundPlayer.Play(soundName, false);
             _soundObject.SetVolume(1.3f);
         }
 

@@ -1,25 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundController : MonoBehaviour
+public class SoundSettingsUI : MonoBehaviour
 {
-    public static SoundController Instance { get; private set; }
-
     [Header("UI Scrollbars")]
-    public Scrollbar masterVolumeSlider;
-    public Scrollbar uiVolumeSlider;
-    public Scrollbar bgmVolumeSlider;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
+    [SerializeField] private Scrollbar masterVolumeSlider;
+    [SerializeField] private Scrollbar uiVolumeSlider;
+    [SerializeField] private Scrollbar bgmVolumeSlider;
 
     private void Start()
     {
@@ -33,12 +20,6 @@ public class SoundController : MonoBehaviour
         masterVolumeSlider.value = soundData.masterVolume;
         uiVolumeSlider.value = soundData.GetVolume(SoundType.UI);
         bgmVolumeSlider.value = soundData.GetVolume(SoundType.BGM);
-
-        SoundManager.Instance.SetMasterVolume(soundData.masterVolume);
-        foreach (SoundVolumeData volumeData in soundData.typeVolumes)
-        {
-            SoundManager.Instance.SetVolume(volumeData.type, volumeData.volume);
-        }
 
         masterVolumeSlider.onValueChanged.AddListener(UpdateMasterVolume);
         uiVolumeSlider.onValueChanged.AddListener(UpdateUIVolume);

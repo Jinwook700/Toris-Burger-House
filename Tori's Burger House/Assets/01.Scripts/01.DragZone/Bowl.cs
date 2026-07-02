@@ -35,7 +35,7 @@ public class Bowl : DragZone
                 if (item.IngredientType == acceptedType)
                 {
                     SoundObject _soundObject;
-                    _soundObject = Sound.Play("DragEnd", false);
+                    _soundObject = SoundPlayer.Play("DragEnd", false);
                     _soundObject.SetVolume(1.3f);
 
                     Vector3 newPos = transform.position + new Vector3(0, stackOffsetY * currentCount, 0);
