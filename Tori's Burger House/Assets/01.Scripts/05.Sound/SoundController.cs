@@ -28,16 +28,16 @@ public class SoundController : MonoBehaviour
 
     public void InitialSetting()
     {
-        SoundData soundData = DataManager.Instance.SoundData;
+        SoundData soundData = SoundDataManager.Instance.SoundData;
 
         masterVolumeSlider.value = soundData.masterVolume;
-        uiVolumeSlider.value = soundData.typeVolumes[SoundType.UI];
-        bgmVolumeSlider.value = soundData.typeVolumes[SoundType.BGM];
+        uiVolumeSlider.value = soundData.GetVolume(SoundType.UI);
+        bgmVolumeSlider.value = soundData.GetVolume(SoundType.BGM);
 
         SoundManager.Instance.SetMasterVolume(soundData.masterVolume);
-        foreach (var kv in soundData.typeVolumes)
+        foreach (SoundVolumeData volumeData in soundData.typeVolumes)
         {
-            SoundManager.Instance.SetVolume(kv.Key, kv.Value);
+            SoundManager.Instance.SetVolume(volumeData.type, volumeData.volume);
         }
 
         masterVolumeSlider.onValueChanged.AddListener(UpdateMasterVolume);
@@ -47,19 +47,16 @@ public class SoundController : MonoBehaviour
 
     private void UpdateMasterVolume(float value)
     {
-        SoundManager.Instance.SetMasterVolume(value);
-        DataManager.Instance.SetMasterVolume(value);
+        SoundDataManager.Instance.SetMasterVolume(value);
     }
 
     private void UpdateUIVolume(float value)
     {
-        SoundManager.Instance.SetVolume(SoundType.UI, value);
-        DataManager.Instance.SetVolume(SoundType.UI, value);
+        SoundDataManager.Instance.SetVolume(SoundType.UI, value);
     }
 
     private void UpdateBgmVolume(float value)
     {
-        SoundManager.Instance.SetVolume(SoundType.BGM, value);
-        DataManager.Instance.SetVolume(SoundType.BGM, value);
+        SoundDataManager.Instance.SetVolume(SoundType.BGM, value);
     }
 }

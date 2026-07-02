@@ -29,9 +29,9 @@ namespace System.Sound
 
         private void Awake()
         {
-            if (DataManager.Instance != null && DataManager.Instance.SoundData != null)
+            if (SoundDataManager.Instance != null && SoundDataManager.Instance.SoundData != null)
             {
-                _masterVolume = DataManager.Instance.SoundData.masterVolume;
+                _masterVolume = SoundDataManager.Instance.SoundData.masterVolume;
             }
             else
             {

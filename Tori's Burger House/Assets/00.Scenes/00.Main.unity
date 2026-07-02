@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmName: TitleBgm
   replay: 1
-  setVol: 0.5
+  setVol: 0.1
 --- !u!4 &1394072221
 Transform:
   m_ObjectHideFlags: 0
@@ -2501,7 +2501,7 @@ GameObject:
   - component: {fileID: 1849297704}
   - component: {fileID: 1849297703}
   m_Layer: 0
-  m_Name: DataManager
+  m_Name: SoundDataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

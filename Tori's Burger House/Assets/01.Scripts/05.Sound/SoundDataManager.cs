@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class DataManager : MonoBehaviour
+/// <summary>
+/// SoundData 관리 스크립트
+/// </summary>
+public class SoundDataManager : MonoBehaviour
 {
-    public static DataManager Instance { get; private set; }
+    public static SoundDataManager Instance { get; private set; }
 
-    private const string FileName = "gameData.json";
+    private const string FileName = "soundSettings.json";
     private string SavePath => Path.Combine(Application.persistentDataPath, FileName);
 
     public SoundData SoundData { get; private set; }
@@ -37,10 +38,23 @@ public class DataManager : MonoBehaviour
             SoundData = new SoundData();
             SaveData();
         }
+
+        if (SoundData == null)
+        {
+            SoundData = new SoundData();
+        }
+
+        SoundData.EnsureDefaultVolumes();
     }
 
     public void SaveData()
     {
+        string directoryPath = Path.GetDirectoryName(SavePath);
+        if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
+
         string json = JsonUtility.ToJson(SoundData, true);
         File.WriteAllText(SavePath, json);
     }
@@ -49,19 +63,22 @@ public class DataManager : MonoBehaviour
     {
         SoundData.masterVolume = volume;
         SaveData();
+
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.SetMasterVolume(volume);
+        }
     }
 
     public void SetVolume(SoundType type, float volume)
     {
-        if (SoundData.typeVolumes.ContainsKey(type))
-        {
-            SoundData.typeVolumes[type] = volume;
-        }
-        else
-        {
-            SoundData.typeVolumes.Add(type, volume);
-        }
+        SoundData.SetVolume(type, volume);
         SaveData();
+
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.SetVolume(type, volume);
+        }
     }
 
     public float GetMasterVolume()
@@ -71,6 +88,6 @@ public class DataManager : MonoBehaviour
 
     public float GetVolume(SoundType type)
     {
-        return SoundData.typeVolumes.TryGetValue(type, out var value) ? value : 1f;
+        return SoundData.GetVolume(type);
     }
 }
